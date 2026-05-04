@@ -1,0 +1,42 @@
+[
+  {
+    "id": "medieval",
+    "label": "中世纪宫廷菜 (1300s–1600s)",
+    "period": "1300–1600",
+    "coreConflict": "食物是权力的展示，香料是财富的语言。越贵的食材有时反而掩盖了食物本身的味道。",
+    "remyMonologue": "You know what they used to put on meat back then? Sugar. SUGAR. On meat. I don't totally get it… but the smell? The smell was honest. 你知道那个年代的人往肉上放什么吗？糖。糖！放在肉上。我到现在都没完全想明白……但那个气味？那个气味是诚实的。",
+    "color": "#C8742A"
+  },
+  {
+    "id": "careme",
+    "label": "古典法餐诞生 (1780s–1850s)",
+    "period": "1780–1855",
+    "coreConflict": "Carême 把宫廷菜变成艺术，但艺术是属于贵族的。菜肴第一次有了自己的语法，但这门语言不是所有人都能说的。",
+    "remyMonologue": "Carême built pastries the way other people build cathedrals. Impressive. But sometimes I wonder — were they actually eating the food, or just… looking at it? Carême 造糕点，就像别人造大教堂一样。壮观。但有时候我会想——他们究竟是在吃东西，还是只是在……看？",
+    "color": "#B5943E"
+  },
+  {
+    "id": "escoffier",
+    "label": "大饭店时代 (1880s–1930s)",
+    "period": "1880–1935",
+    "coreConflict": "Escoffier 把宫廷菜带进大饭店，首次让中产阶级吃到高级法餐。普及是好事，但标准化也意味着个性的消失。",
+    "remyMonologue": "Escoffier put haute cuisine into hotels. Finally, everyone could taste it. But when everyone makes the same béchamel the same way — is that still cooking? Or just… copying? Escoffier 把高级法餐带进了大饭店。终于，所有人都能尝到了。但当所有人都用同样的方式做同一款白酱——那还算是在烹饪吗？还是只是……在复制？",
+    "color": "#7A9B3E"
+  },
+  {
+    "id": "nouvelle",
+    "label": "Nouvelle Cuisine (1960s–1980s)",
+    "period": "1960–1985",
+    "coreConflict": "Paul Bocuse 等人宣布反叛 Escoffier 的繁复，回归食材本味。「少就是多」第一次成为了高级餐厅的哲学。",
+    "remyMonologue": "Finally! Someone said: enough with the heavy sauces, let the vegetables speak! I would have loved to be there. Not to cook — just to smell the moment everything changed. 终于！有人说：够了，别再堆那些厚重的酱汁了，让蔬菜自己说话！我真希望我当时在场。不是去做菜——只是去闻一闻，那个一切都改变了的瞬间。",
+    "color": "#3E8FA6"
+  },
+  {
+    "id": "contemporary",
+    "label": "当代法餐 (2000s—至今)",
+    "period": "2000–至今",
+    "coreConflict": "全球化与地方性的对话——高级餐厅用分子料理解构食物，小餐馆重新发现乡土食材。周期回到了起点。",
+    "remyMonologue": "Today, the great chefs are molecularizing potatoes and rediscovering ratatouille. That's the paradox: the further you go, the more you come back to the beginning. I think I always knew that. 现在，大厨们把土豆分子化，然后重新发现了 Ratatouille。这就是悖论：走得越远，越是回到起点。我想我一直都知道这件事。",
+    "color": "#7A5AAA"
+  }
+]

@@ -1,0 +1,43 @@
+[
+  { "source": "potage",                   "target": "consomme",                   "type": "evolved_from" },
+  { "source": "blanc-manger",             "target": "charlotte-russe",            "type": "evolved_from" },
+  { "source": "bechamel-careme",          "target": "sauce-bechamel-escoffier",   "type": "evolved_from" },
+  { "source": "consomme",                 "target": "sauce-bechamel-escoffier",   "type": "evolved_from" },
+  { "source": "bouillabaisse",            "target": "ratatouille-nouvelle",       "type": "evolved_from" },
+  { "source": "ratatouille-nouvelle",     "target": "ratatouille-contemporary",   "type": "evolved_from" },
+  { "source": "mousse-chocolat",          "target": "oeuf-parfait",               "type": "evolved_from" },
+  { "source": "oublie",                   "target": "madeleine",                  "type": "evolved_from" },
+
+  { "source": "hypocras",                 "target": "blanc-manger",               "type": "era_sibling" },
+  { "source": "hypocras",                 "target": "potage",                     "type": "era_sibling" },
+  { "source": "potage",                   "target": "oublie",                     "type": "era_sibling" },
+  { "source": "blanc-manger",             "target": "dariole",                    "type": "era_sibling" },
+  { "source": "dariole",                  "target": "farcement",                  "type": "era_sibling" },
+  { "source": "oublie",                   "target": "farcement",                  "type": "era_sibling" },
+
+  { "source": "consomme",                 "target": "vol-au-vent",                "type": "era_sibling" },
+  { "source": "vol-au-vent",              "target": "charlotte-russe",            "type": "era_sibling" },
+  { "source": "charlotte-russe",          "target": "bechamel-careme",            "type": "era_sibling" },
+  { "source": "bechamel-careme",          "target": "gelee-royale",               "type": "era_sibling" },
+  { "source": "consomme",                 "target": "gelee-royale",               "type": "era_sibling" },
+
+  { "source": "sauce-bechamel-escoffier", "target": "tournedos-rossini",          "type": "era_sibling" },
+  { "source": "tournedos-rossini",        "target": "peche-melba",                "type": "era_sibling" },
+  { "source": "peche-melba",              "target": "crepes-suzette",             "type": "era_sibling" },
+  { "source": "bouillabaisse",            "target": "sauce-bechamel-escoffier",   "type": "era_sibling" },
+  { "source": "bouillabaisse",            "target": "crepes-suzette",             "type": "era_sibling" },
+
+  { "source": "ratatouille-nouvelle",     "target": "salade-nicoise",             "type": "era_sibling" },
+  { "source": "salade-nicoise",           "target": "mousse-chocolat",            "type": "era_sibling" },
+  { "source": "mousse-chocolat",          "target": "terrine-de-legumes",         "type": "era_sibling" },
+  { "source": "gratin-dauphinois",        "target": "tarte-tatin",                "type": "era_sibling" },
+  { "source": "tarte-tatin",              "target": "ratatouille-nouvelle",       "type": "era_sibling" },
+  { "source": "gratin-dauphinois",        "target": "salade-nicoise",             "type": "era_sibling" },
+
+  { "source": "ratatouille-contemporary", "target": "pain-perdu",                "type": "era_sibling" },
+  { "source": "pain-perdu",               "target": "foie-gras-contemporary",    "type": "era_sibling" },
+  { "source": "foie-gras-contemporary",   "target": "soupe-de-truffe",           "type": "era_sibling" },
+  { "source": "soupe-de-truffe",          "target": "oeuf-parfait",              "type": "era_sibling" },
+  { "source": "oeuf-parfait",             "target": "madeleine",                 "type": "era_sibling" },
+  { "source": "ratatouille-contemporary", "target": "madeleine",                 "type": "era_sibling" }
+]
