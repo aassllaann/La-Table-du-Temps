@@ -1,43 +1,217 @@
 [
-  { "source": "potage",                   "target": "consomme",                   "type": "evolved_from" },
-  { "source": "blanc-manger",             "target": "charlotte-russe",            "type": "evolved_from" },
-  { "source": "bechamel-careme",          "target": "sauce-bechamel-escoffier",   "type": "evolved_from" },
-  { "source": "consomme",                 "target": "sauce-bechamel-escoffier",   "type": "evolved_from" },
-  { "source": "bouillabaisse",            "target": "ratatouille-nouvelle",       "type": "evolved_from" },
-  { "source": "ratatouille-nouvelle",     "target": "ratatouille-contemporary",   "type": "evolved_from" },
-  { "source": "mousse-chocolat",          "target": "oeuf-parfait",               "type": "evolved_from" },
-  { "source": "oublie",                   "target": "madeleine",                  "type": "evolved_from" },
+  {
+    "source": "potage",
+    "target": "consomme",
+    "type": "evolved_from",
+    "reason": "Carême 以 Potage 的骨肉底汤为起点，通过反复过滤和澄清技术去除杂质，做出透明清汤。技法上的改变是真实的：中世纪厨师把浑浊视为丰盛，Carême 把透明度当成精确度的度量。"
+  },
+  {
+    "source": "blanc-manger",
+    "target": "charlotte-russe",
+    "type": "evolved_from",
+    "reason": "Charlotte russe 沿用了 Blanc manger 的基本框架：冷藏、奶基底、白色呈现。Carême 替换了材料——巴伐利亚奶油代替米粉糊，手指饼干构建边框——并把整体提升到宫廷甜品的规格。两者之间隔了五百年，但原理是一样的。"
+  },
+  {
+    "source": "bechamel-careme",
+    "target": "sauce-bechamel-escoffier",
+    "type": "evolved_from",
+    "reason": "Escoffier 在《Le Guide Culinaire》（1903）里给 Béchamel 定了精确的克重比例和标准流程，全球大饭店厨房的厨师可以按手册复制。Carême 的版本靠的是个人经验，Escoffier 的版本靠的是手册。两者做出来的菜在盘子里几乎一样，但传播方式完全不同。"
+  },
+  {
+    "source": "bouillabaisse",
+    "target": "ratatouille-nouvelle",
+    "type": "evolved_from",
+    "reason": "Nouvelle Cuisine 厨师把马赛鱼汤当成论据：一道渔民的剩鱼杂烩，不需要任何精炼处理，就是一道完整的菜。这个论证在厨师圈里站住了。Ratatouille 随后也用同样的逻辑进了高级餐厅——普罗旺斯农家菜不需要被「提升」才合格。"
+  },
+  {
+    "source": "ratatouille-nouvelle",
+    "target": "ratatouille-contemporary",
+    "type": "evolved_from",
+    "reason": "Thomas Keller 把 Nouvelle 的炖煮版改成薄切蔬菜精确排列的工法，视觉上变化很大。2007 年《料理鼠王》把这道菜推给了全球观众——一部动画电影完成了餐厅评论家做不到的事情：让所有人都知道 Ratatouille 是什么。"
+  },
+  {
+    "source": "mousse-chocolat",
+    "target": "oeuf-parfait",
+    "type": "evolved_from",
+    "reason": "两道菜的核心问题是一样的：在一个很窄的参数范围里找到那个「刚好」。打发蛋白问的是——再多一下还是少一下？低温慢煮问的是——63°C 还是 65°C？Nouvelle Cuisine 把质地控制当成技艺的核心，分子料理把温度精确度当成科学，两者之间的逻辑链是真实存在的。"
+  },
+  {
+    "source": "oublie",
+    "target": "madeleine",
+    "type": "evolved_from",
+    "reason": "从 Oublie 到 Madeleine 跨了五个世纪：铁夹换成了贝壳形模具，蜂蜜面粉换成了黄油配方，巴黎街头的卷饼变成了洛林的宫廷小点。配方大不一样，但基本逻辑没变——面粉、甜味、热度，加上一个模具。"
+  },
 
-  { "source": "hypocras",                 "target": "blanc-manger",               "type": "era_sibling" },
-  { "source": "hypocras",                 "target": "potage",                     "type": "era_sibling" },
-  { "source": "potage",                   "target": "oublie",                     "type": "era_sibling" },
-  { "source": "blanc-manger",             "target": "dariole",                    "type": "era_sibling" },
-  { "source": "dariole",                  "target": "farcement",                  "type": "era_sibling" },
-  { "source": "oublie",                   "target": "farcement",                  "type": "era_sibling" },
+  {
+    "source": "hypocras",
+    "target": "blanc-manger",
+    "type": "era_sibling",
+    "reason": "两者都是中世纪宴席上的地位展示。Hypocras 用香料用量说话，Blanc manger 用颜色说话——一个对着鼻子，一个对着眼睛。手段不同，目的一样。"
+  },
+  {
+    "source": "hypocras",
+    "target": "potage",
+    "type": "era_sibling",
+    "reason": "一道开场，一道主菜。Hypocras 在迎宾时端上，Potage 是正餐的核心。前者说你有钱买得起好香料，后者说你有钱养得起好厨子。两者合在一起是中世纪宴席的基本结构。"
+  },
+  {
+    "source": "potage",
+    "target": "oublie",
+    "type": "era_sibling",
+    "reason": "Potage 在宫廷厨房里，Oublie 在巴黎街头。同一个时代，两个完全不同的饮食世界：一个炫耀，一个只是一点甜。"
+  },
+  {
+    "source": "blanc-manger",
+    "target": "dariole",
+    "type": "era_sibling",
+    "reason": "两道菜都用了奶制品——一个是杏仁奶，一个是奶酪。在那个年代，把奶制品用在甜食里不是常规操作，中世纪宫廷厨师在这方面还在摸索。"
+  },
+  {
+    "source": "dariole",
+    "target": "farcement",
+    "type": "era_sibling",
+    "reason": "Dariole 里奶酪和肉桂放在一起，Farcement 里猪肉和葡萄干一起烤。现代人看觉得奇怪，但在那个年代根本不是问题——甜咸分离是后来的规矩，中世纪的厨师没发明这条规矩。"
+  },
+  {
+    "source": "oublie",
+    "target": "farcement",
+    "type": "era_sibling",
+    "reason": "两道菜都不在宫廷菜单上：Oublie 是巴黎街头的小贩货，Farcement 是萨瓦山区的农家饭。中世纪的食物世界不只是宫廷那一套。"
+  },
 
-  { "source": "consomme",                 "target": "vol-au-vent",                "type": "era_sibling" },
-  { "source": "vol-au-vent",              "target": "charlotte-russe",            "type": "era_sibling" },
-  { "source": "charlotte-russe",          "target": "bechamel-careme",            "type": "era_sibling" },
-  { "source": "bechamel-careme",          "target": "gelee-royale",               "type": "era_sibling" },
-  { "source": "consomme",                 "target": "gelee-royale",               "type": "era_sibling" },
+  {
+    "source": "consomme",
+    "target": "vol-au-vent",
+    "type": "era_sibling",
+    "reason": "两道菜是 Carême 的两个方向：清汤往纯粹走，酥皮盒往轻盈走。一液一固，但原则是一样的——去掉多余的，留下刚好的。"
+  },
+  {
+    "source": "vol-au-vent",
+    "target": "charlotte-russe",
+    "type": "era_sibling",
+    "reason": "两件都是 Carême 的可食用建筑：酥皮盒是圆柱形千层结构，俄式夏洛特是手指饼干围出来的容器。容器和内容一样是作品的一部分，这是 Carême 的一贯做法。"
+  },
+  {
+    "source": "charlotte-russe",
+    "target": "bechamel-careme",
+    "type": "era_sibling",
+    "reason": "Charlotte russe 是冷甜品那条线，Béchamel 是热酱汁这条线。Carême 的贡献横跨了这两个方向，甜咸都有他的规则。"
+  },
+  {
+    "source": "bechamel-careme",
+    "target": "gelee-royale",
+    "type": "era_sibling",
+    "reason": "白酱是热的，肉冻是冷的。但两者都在做同一件事：通过控制温度来控制食物的最终状态。Carême 在热锅和冷藏之间找到了一套完整的技法体系。"
+  },
+  {
+    "source": "consomme",
+    "target": "gelee-royale",
+    "type": "era_sibling",
+    "reason": "同一锅骨汤的两种走向：趁热喝是清汤，冷却后凝固就是肉冻。Carême 用同一种基底做出了完全不同的菜，区别只在于温度和时间。"
+  },
 
-  { "source": "sauce-bechamel-escoffier", "target": "tournedos-rossini",          "type": "era_sibling" },
-  { "source": "tournedos-rossini",        "target": "peche-melba",                "type": "era_sibling" },
-  { "source": "peche-melba",              "target": "crepes-suzette",             "type": "era_sibling" },
-  { "source": "bouillabaisse",            "target": "sauce-bechamel-escoffier",   "type": "era_sibling" },
-  { "source": "bouillabaisse",            "target": "crepes-suzette",             "type": "era_sibling" },
+  {
+    "source": "sauce-bechamel-escoffier",
+    "target": "tournedos-rossini",
+    "type": "era_sibling",
+    "reason": "一道是厨房手册里的基础酱汁，一道是名流餐桌上的展示菜。Escoffier 的体系同时运转在这两个层面——后台的技术规范和台前的社交仪式，都需要做到位。"
+  },
+  {
+    "source": "tournedos-rossini",
+    "target": "peche-melba",
+    "type": "era_sibling",
+    "reason": "Escoffier 以名人命名菜肴，这是一套系统：作曲家罗西尼、歌剧女高音梅尔芭——用餐桌把艺术圈和上流社会捆在一起。菜肴成了礼遇的记录，餐厅成了社交现场。"
+  },
+  {
+    "source": "peche-melba",
+    "target": "crepes-suzette",
+    "type": "era_sibling",
+    "reason": "一道靠摆盘，一道靠火焰。Escoffier 时代的大饭店靠的就是这些：吃饭不只是吃饭，宾客需要看到表演。蜜桃梅尔芭是视觉的，苏塞特可丽饼是现场的。"
+  },
+  {
+    "source": "bouillabaisse",
+    "target": "sauce-bechamel-escoffier",
+    "type": "era_sibling",
+    "reason": "标准化白酱可以在任何大饭店复制，马赛鱼汤离开了马赛就不完整。Escoffier 的体系里同时容纳了这两种东西，但逻辑上有矛盾。Nouvelle Cuisine 后来发现了这个矛盾，拿它开刀了。"
+  },
+  {
+    "source": "bouillabaisse",
+    "target": "crepes-suzette",
+    "type": "era_sibling",
+    "reason": "马赛鱼汤从渔港来，苏塞特可丽饼在蒙地卡罗的豪华饭店里点火。Escoffier 把这两道菜放在同一本菜单上——南方的渔民菜和上流社会的桌边表演，共存于大饭店时代。"
+  },
 
-  { "source": "ratatouille-nouvelle",     "target": "salade-nicoise",             "type": "era_sibling" },
-  { "source": "salade-nicoise",           "target": "mousse-chocolat",            "type": "era_sibling" },
-  { "source": "mousse-chocolat",          "target": "terrine-de-legumes",         "type": "era_sibling" },
-  { "source": "gratin-dauphinois",        "target": "tarte-tatin",                "type": "era_sibling" },
-  { "source": "tarte-tatin",              "target": "ratatouille-nouvelle",       "type": "era_sibling" },
-  { "source": "gratin-dauphinois",        "target": "salade-nicoise",             "type": "era_sibling" },
+  {
+    "source": "ratatouille-nouvelle",
+    "target": "salade-nicoise",
+    "type": "era_sibling",
+    "reason": "两道菜都来自法国南部，都不需要复杂技法。Nouvelle Cuisine 厨师把它们并排放进菜单，用意是一样的：食材够好，不需要额外加工来证明它的地位。"
+  },
+  {
+    "source": "salade-nicoise",
+    "target": "mousse-chocolat",
+    "type": "era_sibling",
+    "reason": "一道冷的、不加热的沙拉上了高级菜单，一道打发到轻盈的巧克力甜品替代了厚重的蛋糕。两者针对的是 Escoffier 时代的同一个逻辑：浓稠厚重等于高级。Nouvelle Cuisine 说不是这样的。"
+  },
+  {
+    "source": "mousse-chocolat",
+    "target": "terrine-de-legumes",
+    "type": "era_sibling",
+    "reason": "慕斯通过打发把浓稠变轻盈，蔬菜冻派通过明胶把液体变固体。Nouvelle Cuisine 厨师开始把食材的物理状态当成可以调整的东西——这不是 Escoffier 时代的思路，是新的。"
+  },
+  {
+    "source": "gratin-dauphinois",
+    "target": "tarte-tatin",
+    "type": "era_sibling",
+    "reason": "土豆焗是阿尔卑斯山区的农家菜，翻转苹果挞据说是 Tatin 姐妹的意外。Nouvelle Cuisine 把这两道菜搬进高级餐厅，论据是：来自某个地方的真实菜，不需要精炼才有资格上桌。"
+  },
+  {
+    "source": "tarte-tatin",
+    "target": "ratatouille-nouvelle",
+    "type": "era_sibling",
+    "reason": "一道甜品，一道主菜，来自两个不同地方。Tarte Tatin 和 Ratatouille 都不是精心设计出来的菜，都有一个具体的地点和来由。Nouvelle Cuisine 用它们来说明：高级餐厅的菜单不必从巴黎宫廷找来源。"
+  },
+  {
+    "source": "gratin-dauphinois",
+    "target": "salade-nicoise",
+    "type": "era_sibling",
+    "reason": "一道来自阿尔卑斯山脚，厚实的；一道来自地中海海岸，清爽的。Nouvelle Cuisine 把两者都放进了高级餐厅，证明「法餐」不只是一种风格。"
+  },
 
-  { "source": "ratatouille-contemporary", "target": "pain-perdu",                "type": "era_sibling" },
-  { "source": "pain-perdu",               "target": "foie-gras-contemporary",    "type": "era_sibling" },
-  { "source": "foie-gras-contemporary",   "target": "soupe-de-truffe",           "type": "era_sibling" },
-  { "source": "soupe-de-truffe",          "target": "oeuf-parfait",              "type": "era_sibling" },
-  { "source": "oeuf-parfait",             "target": "madeleine",                 "type": "era_sibling" },
-  { "source": "ratatouille-contemporary", "target": "madeleine",                 "type": "era_sibling" }
+  {
+    "source": "ratatouille-contemporary",
+    "target": "pain-perdu",
+    "type": "era_sibling",
+    "reason": "Ratatouille 和法式黄金吐司，两道都是家常菜进了顶级餐厅。当代厨师用精确的技法处理最普通的食材——薄切摆盘，布里欧修面包，精确温控——朴素的东西因为执行标准更高，做起来更难。"
+  },
+  {
+    "source": "pain-perdu",
+    "target": "foie-gras-contemporary",
+    "type": "era_sibling",
+    "reason": "鹅肝和法式黄金吐司同时出现在当代高级餐厅的菜单上。一个极贵，一个家常。当代法餐的厨师不介意这个对比，有时候甚至刻意放在一起。"
+  },
+  {
+    "source": "foie-gras-contemporary",
+    "target": "soupe-de-truffe",
+    "type": "era_sibling",
+    "reason": "鹅肝用低温慢煮找新的质地，松露汤用戏剧性的开盖仪式来强化体验。一个是在更新经典，一个是在供奉经典。两种对待传统奢华食材的方式，在同一个时代的菜单上都有。"
+  },
+  {
+    "source": "soupe-de-truffe",
+    "target": "oeuf-parfait",
+    "type": "era_sibling",
+    "reason": "松露汤靠的是仪式感和情感，完美温泉蛋靠的是温度精确度。两道菜同在当代顶级厨师的菜单上，代表了两种不同的做法：一种问什么让人感动，另一种问多少度才刚好。"
+  },
+  {
+    "source": "oeuf-parfait",
+    "target": "madeleine",
+    "type": "era_sibling",
+    "reason": "温泉蛋问的是 63°C 还是 65°C，玛德琳问的是那个柠檬皮的气味能不能把你带回去。同一个厨房时代，两种完全不同的追问。哪个更重要，当代厨师没有给出统一答案。"
+  },
+  {
+    "source": "ratatouille-contemporary",
+    "target": "madeleine",
+    "type": "era_sibling",
+    "reason": "Ratatouille 因为一部 2007 年的动画电影被全球认知，玛德琳因为一部 1913 年的小说被永久记住。两道菜都超出了餐桌的范围，跑进了文学和电影里。法国食物和法国文化之间大概本来就没有什么明确的界限。"
+  }
 ]

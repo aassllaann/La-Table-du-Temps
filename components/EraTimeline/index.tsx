@@ -1,5 +1,6 @@
 'use client';
 
+import { AnimatePresence, motion } from 'framer-motion';
 import { useSelectedEra, useAppDispatch } from '@/lib/store';
 import type { Era } from '@/lib/types';
 import erasData from '@/data/eras.json';
@@ -99,6 +100,27 @@ export default function EraTimeline() {
                 >
                   {era.period}
                 </div>
+
+                {/* coreConflict — expands when active */}
+                <AnimatePresence initial={false}>
+                  {isActive && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.28, ease: 'easeOut' }}
+                      className="text-xs leading-relaxed overflow-hidden"
+                      style={{
+                        color: 'rgba(240,232,208,0.52)',
+                        marginTop: '6px',
+                        borderLeft: `2px solid ${era.color}55`,
+                        paddingLeft: '8px',
+                      }}
+                    >
+                      {era.coreConflict}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </div>
             </button>
           );

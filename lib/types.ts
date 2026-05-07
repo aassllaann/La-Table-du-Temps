@@ -27,6 +27,7 @@ export interface Edge {
   source: string;
   target: string;
   type: EdgeType;
+  reason?: string;
 }
 
 export interface GraphNode extends Dish {
@@ -42,11 +43,22 @@ export interface GraphLink {
   source: GraphNode | string;
   target: GraphNode | string;
   type: EdgeType;
+  reason?: string;
+}
+
+export interface SelectedEdge {
+  sourceId: string;
+  targetId: string;
+  type: EdgeType;
+  reason?: string;
+  x: number; // viewport clientX
+  y: number; // viewport clientY
 }
 
 export interface AppState {
   selectedEra: EraId | null;
   selectedDish: Dish | null;
+  selectedEdge: SelectedEdge | null;
   remyVisible: boolean;
   remySensoryOpen: boolean;
 }

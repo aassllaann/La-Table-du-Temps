@@ -1,0 +1,178 @@
+{
+  "_comment": "Manually maintained anchor. Verify each QID at https://www.wikidata.org/wiki/Q<ID> before running the pipeline. HIGH-confidence QIDs are marked; MODERATE ones must be checked.",
+  "_schema_version": "1.0",
+  "_confidence_notes": {
+    "HIGH": "bouillabaisse, tarte-tatin, ratatouille-nouvelle, ratatouille-contemporary, gratin-dauphinois, madeleine, peche-melba, vol-au-vent, consomme, crepes-suzette, tournedos-rossini, pain-perdu, foie-gras-contemporary, soupe-de-truffe, bechamel-careme, sauce-bechamel-escoffier, salade-nicoise, mousse-chocolat, hypocras, blanc-manger, potage, dariole, charlotte-russe",
+    "MODERATE": "oublie, farcement, gelee-royale, terrine-de-legumes, oeuf-parfait"
+  },
+  "dishes": {
+    "hypocras": {
+      "qid": "Q673389",
+      "wp_fr_title": "Hypocras",
+      "confidence": "HIGH",
+      "notes": "Updated from Q869392; Q673389 is hippocrass — wine mixed with sugar and spices"
+    },
+    "blanc-manger": {
+      "qid": "Q551514",
+      "wp_fr_title": "Blanc-manger",
+      "confidence": "HIGH",
+      "notes": "Updated from Q473094; Q551514 is canonical blancmange dessert item"
+    },
+    "potage": {
+      "qid": "Q5420610",
+      "wp_fr_title": "Potage",
+      "confidence": "HIGH",
+      "notes": "Updated from Q192783; Q5420610 is the food item for potage"
+    },
+    "oublie": {
+      "qid": "Q1226651",
+      "wp_fr_title": "Oublie",
+      "confidence": "MODERATE",
+      "notes": "Updated from Q1429839; Q1226651 is wafer cookie (thin type of biscuit) — closest food match"
+    },
+    "dariole": {
+      "qid": "Q3016156",
+      "wp_fr_title": "Dariole",
+      "confidence": "HIGH",
+      "notes": "Updated from Q1159456; Q3016156 is specifically a French pastry and dessert mold"
+    },
+    "farcement": {
+      "qid": "Q3066793",
+      "wp_fr_title": "Farcement",
+      "confidence": "MODERATE",
+      "notes": "Updated from Q3069434; Q3066793 is the Farcement item (no description yet on Wikidata). ERA MISMATCH expected: Savoie dish ~19th century"
+    },
+    "consomme": {
+      "qid": "Q2082064",
+      "wp_fr_title": "Consommé",
+      "confidence": "HIGH",
+      "notes": "Updated from Q191469; Q2082064 is Consommé — type of clear soup"
+    },
+    "vol-au-vent": {
+      "qid": "Q304868",
+      "wp_fr_title": "Vol-au-vent",
+      "confidence": "HIGH",
+      "notes": "Updated from Q897523; Q304868 is the puff pastry food item"
+    },
+    "charlotte-russe": {
+      "qid": "Q2961045",
+      "wp_fr_title": "Charlotte russe",
+      "confidence": "HIGH",
+      "notes": "Updated from Q1064089; Q2961045 is specifically charlotte russe (not the parent Charlotte dessert category)"
+    },
+    "bechamel-careme": {
+      "qid": "Q209974",
+      "wp_fr_title": "Sauce béchamel",
+      "confidence": "HIGH",
+      "notes": "Updated from Q178820; Q209974 is béchamel — sauce of French cuisine. Shares QID with sauce-bechamel-escoffier"
+    },
+    "gelee-royale": {
+      "qid": "Q25383981",
+      "wp_fr_title": "Gelée (cuisine)",
+      "confidence": "MODERATE",
+      "notes": "Updated from Q14947524 (no French label); Q25383981 confirmed via Wikipedia cross-link. Carême's gelée royale is a culinary aspic/gelée."
+    },
+    "sauce-bechamel-escoffier": {
+      "qid": "Q209974",
+      "wp_fr_title": "Sauce béchamel",
+      "confidence": "HIGH",
+      "notes": "Updated from Q178820; Q209974 is béchamel — sauce of French cuisine. Shares QID with bechamel-careme — pipeline handles duplicate QIDs via by_dish_id index"
+    },
+    "peche-melba": {
+      "qid": "Q1567954",
+      "wp_fr_title": "Pêche Melba",
+      "confidence": "HIGH",
+      "notes": "Updated from Q729473; Q1567954 is Peach Melba — type of dessert"
+    },
+    "tournedos-rossini": {
+      "qid": "Q2303610",
+      "wp_fr_title": "Tournedos Rossini",
+      "confidence": "HIGH",
+      "notes": "Updated from Q1076224; Q2303610 is Tournedos Rossini — French steak dish"
+    },
+    "bouillabaisse": {
+      "qid": "Q828043",
+      "wp_fr_title": "Bouillabaisse",
+      "confidence": "HIGH",
+      "notes": "Updated from Q190174; Q828043 is traditional Provençal fish stew. ERA MISMATCH risk: ancient Provençal dish"
+    },
+    "crepes-suzette": {
+      "qid": "Q1142539",
+      "wp_fr_title": "Crêpe Suzette",
+      "confidence": "HIGH",
+      "notes": "Updated from Q1141416; Q1142539 is Crêpe Suzette — French pancake dessert. Attribution contested between Escoffier and Henri Carpentier"
+    },
+    "ratatouille-nouvelle": {
+      "qid": "Q183095",
+      "wp_fr_title": "Ratatouille",
+      "confidence": "HIGH",
+      "notes": "Updated from Q178115; Q183095 is ratatouille — French dish. Canonical dish QID shared with ratatouille-contemporary"
+    },
+    "salade-nicoise": {
+      "qid": "Q209486",
+      "wp_fr_title": "Salade niçoise",
+      "confidence": "HIGH",
+      "notes": "Updated from Q697973; Q209486 is Niçard salad — composed tomato, egg, fish and vegetable salad. ERA MISMATCH risk: first written recipe ~1880s–1903"
+    },
+    "mousse-chocolat": {
+      "qid": "Q1381277",
+      "wp_fr_title": "Mousse au chocolat",
+      "confidence": "HIGH",
+      "notes": "Updated from Q1055851; Q1381277 is chocolate mousse — dessert"
+    },
+    "terrine-de-legumes": {
+      "qid": "Q14624645",
+      "wp_fr_title": "Terrine",
+      "confidence": "MODERATE",
+      "notes": "Updated from Q740861 (wrong — returned 'Martin Petrášek'); Q14624645 confirmed via Wikipedia cross-link on 'Terrine' article. General terrine item — no specific QID for vegetable terrine."
+    },
+    "gratin-dauphinois": {
+      "qid": "Q1647122",
+      "wp_fr_title": "Gratin dauphinois",
+      "confidence": "HIGH",
+      "notes": "Updated from Q1537368; Q1647122 is gratin dauphinois — French dish. ERA MISMATCH expected: documented 1788"
+    },
+    "tarte-tatin": {
+      "qid": "Q1147946",
+      "wp_fr_title": "Tarte Tatin",
+      "confidence": "HIGH",
+      "notes": "Updated from Q189966; Q1147946 is tarte Tatin — pastry with caramelised fruit that originated in France. ERA MISMATCH expected: Tatin sisters ~1880–1910"
+    },
+    "ratatouille-contemporary": {
+      "qid": "Q183095",
+      "wp_fr_title": "Ratatouille",
+      "confidence": "HIGH",
+      "notes": "Updated from Q178115; Q183095 is ratatouille — French dish. Narrative variant of ratatouille-nouvelle — same underlying dish QID"
+    },
+    "pain-perdu": {
+      "qid": "Q197973",
+      "wp_fr_title": "Pain perdu",
+      "confidence": "HIGH",
+      "notes": "Updated from Q745530; Q197973 is French toast — bread soaked in beaten eggs and then fried"
+    },
+    "foie-gras-contemporary": {
+      "qid": "Q34807",
+      "wp_fr_title": "Foie gras",
+      "confidence": "HIGH",
+      "notes": "Updated from Q83620 ('voie de communication' — wrong!); Q34807 confirmed via Wikipedia cross-link. Ancient dish; contemporary designation is a narrative framing."
+    },
+    "soupe-de-truffe": {
+      "qid": "Q16677587",
+      "wp_fr_title": "Soupe aux truffes noires VGE",
+      "confidence": "HIGH",
+      "notes": "Updated from Q3490985 ('Qelelevu' — wrong!); Q16677587 confirmed via Wikipedia cross-link. Bocuse 1975 creation for Valéry Giscard d'Estaing. ERA INTENTIONAL OVERRIDE: Wikidata year 1975 maps to 'nouvelle' but project assigns 'contemporary' — dish is framed as a living contemporary symbol, not a historical nouvelle artifact. Do not auto-correct era."
+    },
+    "oeuf-parfait": {
+      "qid": "Q97179868",
+      "wp_fr_title": null,
+      "confidence": "MODERATE",
+      "notes": "Updated from Q1053860; Q97179868 is œuf parfait (no description). Sous-vide egg technique may not have a canonical standalone Wikidata item"
+    },
+    "madeleine": {
+      "qid": "Q604408",
+      "wp_fr_title": null,
+      "confidence": "HIGH",
+      "notes": "Updated from Q204189; Q604408 is madeleine — type of cake traditional from France. ERA MISMATCH expected: 18th-century cake (~1755)"
+    }
+  }
+}

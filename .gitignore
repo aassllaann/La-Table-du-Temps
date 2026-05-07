@@ -21,3 +21,6 @@ next-env.d.ts
 # OS
 .DS_Store
 Thumbs.db
+
+# Data collection pipeline — raw API responses (reproducible, do not commit)
+scripts/collect/output/

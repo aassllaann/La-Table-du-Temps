@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { AppProvider } from '@/lib/store';
 import EraBackground from '@/components/EraBackground';
 import RemyMonologue from '@/components/RemyMonologue';
+import EdgePopup from '@/components/EdgePopup';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function RootLayout({
         <AppProvider>
           <EraBackground />
           <RemyMonologue />
+          <EdgePopup />
           <main className="relative z-10 h-full">
             {children}
           </main>

@@ -3,7 +3,14 @@
     "allow": [
       "Bash(npm install:*)",
       "Bash(npx tsc:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "WebFetch(domain:musicmap.info)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); missing=[x['id'] for x in d if not x.get\\('remySensory'\\)]; print\\(f'Total: {len\\(d\\)}, missing remySensory: {len\\(missing\\)}'\\)\")",
+      "Bash(node -e \"const d=require\\('./data/dishes.json'\\); const missing=d.filter\\(x=>!x.remySensory\\); console.log\\('Total:',d.length,'Missing remySensory:',missing.length\\); const noChef=d.filter\\(x=>x.chef===null\\).map\\(x=>x.id\\); console.log\\('No chef:',noChef.length\\);\")",
+      "Bash(node -e \"const d=require\\('./data/edges.json'\\); const noReason=d.filter\\(x=>!x.reason\\); console.log\\('Total edges:',d.length,'Missing reason:',noReason.length, noReason.map\\(x=>x.source+' → '+x.target\\)\\);\")",
+      "Bash(node -e ':*)",
+      "Bash(python:*)",
+      "Bash(npx skills:*)"
     ]
   }
 }

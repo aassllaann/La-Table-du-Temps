@@ -1,17 +1,19 @@
 'use client';
 
 import { createContext, useContext, useReducer, type ReactNode } from 'react';
-import type { Dish, EraId, AppState } from './types';
+import type { Dish, EraId, SelectedEdge, AppState } from './types';
 
 type Action =
   | { type: 'SET_ERA'; payload: EraId | null }
   | { type: 'SET_DISH'; payload: Dish | null }
+  | { type: 'SET_EDGE'; payload: SelectedEdge | null }
   | { type: 'HIDE_REMY' }
   | { type: 'TOGGLE_SENSORY' };
 
 const initialState: AppState = {
   selectedEra: null,
   selectedDish: null,
+  selectedEdge: null,
   remyVisible: false,
   remySensoryOpen: false,
 };
@@ -23,11 +25,14 @@ function reducer(state: AppState, action: Action): AppState {
         ...state,
         selectedEra: action.payload,
         selectedDish: null,
+        selectedEdge: null,
         remyVisible: action.payload !== null,
         remySensoryOpen: false,
       };
     case 'SET_DISH':
-      return { ...state, selectedDish: action.payload, remySensoryOpen: false };
+      return { ...state, selectedDish: action.payload, selectedEdge: null, remySensoryOpen: false };
+    case 'SET_EDGE':
+      return { ...state, selectedEdge: action.payload, selectedDish: null };
     case 'HIDE_REMY':
       return { ...state, remyVisible: false };
     case 'TOGGLE_SENSORY':
@@ -71,6 +76,10 @@ export function useRemyVisible() {
 
 export function useRemySensoryOpen() {
   return useAppContext().state.remySensoryOpen;
+}
+
+export function useSelectedEdge() {
+  return useAppContext().state.selectedEdge;
 }
 
 export function useAppDispatch() {

@@ -1,9 +1,9 @@
 'use client';
 
-import { useRef, useCallback, useMemo } from 'react';
+import { useRef, useCallback } from 'react';
 import { useSelectedEra, useSelectedDish, useAppDispatch } from '@/lib/store';
 import { useDishGraph } from './useDishGraph';
-import type { Dish, Edge } from '@/lib/types';
+import type { Dish, Edge, SelectedEdge } from '@/lib/types';
 import dishesRaw from '@/data/dishes.json';
 import edgesRaw from '@/data/edges.json';
 
@@ -16,17 +16,6 @@ export default function DishGraph() {
   const selectedEra = useSelectedEra();
   const selectedDish = useSelectedDish();
 
-  const filteredDishes = useMemo(
-    () =>
-      selectedEra ? allDishes.filter((d) => d.era === selectedEra) : allDishes,
-    [selectedEra]
-  );
-
-  const filteredEdges = useMemo(() => {
-    const ids = new Set(filteredDishes.map((d) => d.id));
-    return allEdges.filter((e) => ids.has(e.source) && ids.has(e.target));
-  }, [filteredDishes]);
-
   const handleDishClick = useCallback(
     (dish: Dish) => {
       dispatch({ type: 'SET_DISH', payload: dish });
@@ -34,74 +23,81 @@ export default function DishGraph() {
     [dispatch]
   );
 
+  const handleEdgeClick = useCallback(
+    (info: SelectedEdge) => {
+      dispatch({ type: 'SET_EDGE', payload: info });
+    },
+    [dispatch]
+  );
+
   useDishGraph(svgRef, {
-    dishes: filteredDishes,
-    edges: filteredEdges,
+    dishes: allDishes,
+    edges: allEdges,
+    selectedEra,
     selectedDish,
     onDishClick: handleDishClick,
+    onEdgeClick: handleEdgeClick,
   });
 
   return (
     <div className="relative flex-1 h-full overflow-hidden">
       {/* Legend */}
       <div
-        className="absolute bottom-5 left-5 z-10 flex flex-col gap-2 px-3 py-2.5 rounded-lg"
+        className="absolute bottom-5 right-5 z-10 flex flex-col gap-2 px-3 py-2.5 rounded-lg"
         style={{
-          background: 'rgba(15,12,7,0.75)',
+          background: 'rgba(15,12,7,0.78)',
           backdropFilter: 'blur(10px)',
           border: '1px solid rgba(255,255,255,0.07)',
         }}
       >
         <div className="flex items-center gap-2">
-          <svg width="32" height="8">
-            <line
-              x1="0"
-              y1="4"
-              x2="26"
-              y2="4"
+          <svg width="34" height="10">
+            <path
+              d="M0,5 C8,5 18,5 26,5"
+              fill="none"
               stroke="#C8A84B"
-              strokeWidth="1.6"
+              strokeWidth="1.5"
             />
-            <polygon points="26,1 32,4 26,7" fill="#C8A84B" />
+            <polygon points="26,2 34,5 26,8" fill="#C8A84B" />
           </svg>
-          <span
-            className="text-xs"
-            style={{ color: 'rgba(240,232,208,0.4)' }}
-          >
+          <span className="text-xs" style={{ color: 'rgba(240,232,208,0.42)' }}>
             演化自
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <svg width="32" height="8">
-            <line
-              x1="0"
-              y1="4"
-              x2="32"
-              y2="4"
+          <svg width="34" height="10">
+            <path
+              d="M0,5 Q17,1 34,5"
+              fill="none"
               stroke="#7A6040"
               strokeWidth="1"
-              strokeDasharray="6,4"
+              strokeDasharray="5,4"
             />
           </svg>
-          <span
-            className="text-xs"
-            style={{ color: 'rgba(240,232,208,0.4)' }}
-          >
+          <span className="text-xs" style={{ color: 'rgba(240,232,208,0.42)' }}>
             同时期代表作
           </span>
         </div>
       </div>
 
-      {/* Era label overlay */}
+      {/* Scroll hint (shown when no era selected) */}
       {!selectedEra && (
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none text-center"
-          style={{ color: 'rgba(240,232,208,0.12)' }}
+          className="absolute top-4 left-1/2 -translate-x-1/2 z-10 pointer-events-none"
+          style={{
+            background: 'rgba(15,12,7,0.65)',
+            backdropFilter: 'blur(8px)',
+            border: '1px solid rgba(255,255,255,0.07)',
+            borderRadius: '20px',
+            padding: '5px 14px',
+          }}
         >
-          <div className="text-4xl mb-3 select-none">🍽</div>
-          <div className="text-sm tracking-widest uppercase">
-            点击左侧时期开始探索
-          </div>
+          <span
+            className="text-xs tracking-wide"
+            style={{ color: 'rgba(240,232,208,0.35)' }}
+          >
+            滚轮缩放 · 拖拽平移 · 悬停查看关系
+          </span>
         </div>
       )}
 

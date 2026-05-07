@@ -1,0 +1,15 @@
+# Data collection pipeline dependencies
+# Core pipeline uses Python 3.11+ stdlib only (urllib, json, pathlib).
+# All packages below are optional.
+
+# requests — simpler HTTP with retry support (optional alternative to urllib)
+requests>=2.31.0
+
+# SPARQLWrapper — higher-level SPARQL client (optional alternative to raw urllib)
+SPARQLWrapper>=2.0.0
+
+# rich — colored terminal output for crosscheck results
+rich>=13.0.0
+
+# pytest — unit tests for era inference and crosscheck logic
+pytest>=8.0.0
