@@ -34,8 +34,7 @@ export default function RemySensory({ dish }: Props) {
       >
         <span className="text-lg select-none">🐭</span>
         <span
-          className="text-sm flex-1"
-          className="font-display"
+          className="font-display text-sm flex-1"
           style={{ color: sensoryOpen ? eraColor : 'rgba(28,20,16,0.52)', fontSize: '15px' }}
         >
           听 Remy 说
@@ -62,8 +61,7 @@ export default function RemySensory({ dish }: Props) {
           >
             <div className="px-4 pb-4 pt-1" style={{ borderTop: `1px solid ${eraColor}20` }}>
               <p
-                className="text-sm leading-relaxed italic"
-                className="font-display"
+                className="font-display text-sm leading-relaxed italic"
                 style={{ color: 'rgba(28,20,16,0.65)', fontSize: '15px' }}
               >
                 &ldquo;{dish.remySensory}&rdquo;

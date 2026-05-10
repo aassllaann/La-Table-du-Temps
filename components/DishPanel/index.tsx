@@ -33,7 +33,7 @@ export default function DishPanel() {
 
   return (
     <aside
-      className="relative z-10 flex flex-col w-96 flex-shrink-0 h-full overflow-hidden"
+      className="explore-panel-right relative z-10 flex flex-col w-96 flex-shrink-0 h-full overflow-hidden"
       style={{
         background: 'rgba(247,243,234,0.88)',
         borderLeft: '1px solid rgba(28,20,16,0.09)',

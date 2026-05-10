@@ -61,3 +61,38 @@ body::before {
   background: rgba(28, 20, 16, 0.18);
   border-radius: 2px;
 }
+
+/* ── Explore page: panel entrance choreography ───────────────────────────── */
+@keyframes enter-from-left {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes enter-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes enter-from-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.explore-panel-left {
+  animation: enter-from-left 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.explore-panel-center {
+  animation: enter-fade 0.65s cubic-bezier(0.16, 1, 0.3, 1) both 0.07s;
+}
+.explore-panel-right {
+  animation: enter-from-right 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.14s;
+}
+
+/* ── Accessibility: reduced motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

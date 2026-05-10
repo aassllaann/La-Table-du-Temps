@@ -55,8 +55,7 @@ export default function RemyMonologue() {
               Remy · {era.label.split(' (')[0]}
             </div>
             <p
-              className="text-sm leading-relaxed italic"
-              className="font-display"
+              className="font-display text-sm leading-relaxed italic"
               style={{ color: 'rgba(28,20,16,0.72)', fontSize: '15px' }}
             >
               &ldquo;{era.remyMonologue}&rdquo;

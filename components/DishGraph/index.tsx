@@ -30,7 +30,7 @@ export default function DishGraph() {
     [dispatch]
   );
 
-  useDishGraph(svgRef, {
+  const { resetZoom } = useDishGraph(svgRef, {
     dishes: allDishes,
     edges: allEdges,
     selectedEra,
@@ -40,8 +40,39 @@ export default function DishGraph() {
   });
 
   return (
-    <div className="relative flex-1 h-full overflow-hidden">
-      {/* Legend */}
+    <div className="explore-panel-center relative flex-1 h-full overflow-hidden">
+      {/* Reset zoom button — top-right */}
+      <button
+        onClick={resetZoom}
+        style={{
+          position: 'absolute',
+          top: 14,
+          right: 14,
+          zIndex: 10,
+          background: 'transparent',
+          border: '1px solid rgba(28,20,16,0.16)',
+          borderRadius: 2,
+          padding: '4px 11px',
+          fontSize: 11,
+          fontFamily: 'Georgia, serif',
+          color: 'rgba(28,20,16,0.34)',
+          cursor: 'pointer',
+          letterSpacing: '0.05em',
+          transition: 'color 0.15s ease, border-color 0.15s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.color = 'rgba(28,20,16,0.68)';
+          e.currentTarget.style.borderColor = 'rgba(28,20,16,0.36)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.color = 'rgba(28,20,16,0.34)';
+          e.currentTarget.style.borderColor = 'rgba(28,20,16,0.16)';
+        }}
+      >
+        ↺ 重置视图
+      </button>
+
+      {/* Legend — bottom-right */}
       <div
         className="absolute bottom-5 right-5 z-10 flex flex-col gap-2 px-3.5 py-3 rounded-lg"
         style={{
@@ -51,20 +82,17 @@ export default function DishGraph() {
           boxShadow: '0 1px 8px rgba(28,20,16,0.06)',
         }}
       >
+        {/* Edge: evolved_from */}
         <div className="flex items-center gap-2">
           <svg width="34" height="10">
-            <path
-              d="M0,5 C8,5 18,5 26,5"
-              fill="none"
-              stroke="#9B7A2E"
-              strokeWidth="1.5"
-            />
+            <path d="M0,5 C8,5 18,5 26,5" fill="none" stroke="#9B7A2E" strokeWidth="1.5" />
             <polygon points="26,2 34,5 26,8" fill="#9B7A2E" />
           </svg>
           <span className="text-xs" style={{ color: 'rgba(28,20,16,0.50)', letterSpacing: '0.03em' }}>
             演化自
           </span>
         </div>
+        {/* Edge: era_sibling */}
         <div className="flex items-center gap-2">
           <svg width="34" height="10">
             <path
@@ -77,6 +105,18 @@ export default function DishGraph() {
           </svg>
           <span className="text-xs" style={{ color: 'rgba(28,20,16,0.50)', letterSpacing: '0.03em' }}>
             同时期代表作
+          </span>
+        </div>
+        {/* Thin divider */}
+        <div style={{ borderTop: '1px solid rgba(28,20,16,0.08)', margin: '1px 0' }} />
+        {/* Node size */}
+        <div className="flex items-center gap-2">
+          <svg width="34" height="12">
+            <circle cx="7" cy="6" r="5" fill="rgba(155,122,46,0.55)" />
+            <circle cx="24" cy="6" r="3.5" fill="rgba(155,122,46,0.55)" />
+          </svg>
+          <span className="text-xs" style={{ color: 'rgba(28,20,16,0.50)', letterSpacing: '0.03em' }}>
+            大 = 主厨代表作
           </span>
         </div>
       </div>

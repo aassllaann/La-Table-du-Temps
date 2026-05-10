@@ -46,8 +46,7 @@ export default function DishInfo({ dish }: Props) {
       {/* Names */}
       <div>
         <h2
-          className="text-2xl leading-tight mb-1"
-          className="font-display"
+          className="font-display text-2xl leading-tight mb-1"
           style={{ color: 'rgba(28,20,16,0.92)', fontWeight: 500, letterSpacing: '0.01em' }}
         >
           {dish.name_fr}

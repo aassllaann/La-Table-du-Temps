@@ -36,6 +36,8 @@ export function useDishGraph(
   const optionsRef = useRef(options);
   optionsRef.current = options;
 
+  const resetZoomRef = useRef<(() => void) | null>(null);
+
   // ── Layout effect: runs once on mount ──────────────────────────────────────
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -117,6 +119,15 @@ export function useDishGraph(
           g.attr('transform', event.transform.toString());
         });
       svg.call(zoom);
+
+      // Store reset function; disable d3 default dblclick zoom, add custom reset
+      resetZoomRef.current = () => {
+        svg.transition().duration(320).ease(d3.easeQuadOut).call(zoom.transform, d3.zoomIdentity);
+      };
+      svg.on('dblclick.zoom', null);
+      svg.on('dblclick', () => {
+        svg.transition().duration(320).ease(d3.easeQuadOut).call(zoom.transform, d3.zoomIdentity);
+      });
 
       // ── Era bands ─────────────────────────────────────────────────────────
       const bandsG = g.append('g').attr('class', 'era-bands');
@@ -390,6 +401,7 @@ export function useDishGraph(
       // Era bands
       d3.select(svgEl)
         .selectAll<SVGRectElement, EraId>('rect.era-band')
+        .transition().duration(380).ease(d3.easeCubicOut)
         .attr('fill-opacity', (d) =>
           !selectedEra || d === selectedEra ? 0.09 : 0.025
         );
@@ -397,6 +409,7 @@ export function useDishGraph(
       // Node groups
       d3.select(svgEl)
         .selectAll<SVGGElement, GraphNode>('g.dish-node')
+        .transition().duration(300).ease(d3.easeCubicOut)
         .attr('opacity', (d) =>
           !selectedEra || d.era === selectedEra ? 1 : 0.18
         );
@@ -404,6 +417,7 @@ export function useDishGraph(
       // Edges
       d3.select(svgEl)
         .selectAll<SVGPathElement, GraphLink>('path.dish-edge')
+        .transition().duration(300).ease(d3.easeCubicOut)
         .attr('stroke-opacity', (d) => {
           if (!selectedEra) {
             return d.type === 'evolved_from' ? 0.65 : 0.28;
@@ -446,6 +460,7 @@ export function useDishGraph(
       d3.select(svgEl)
         .selectAll<SVGGElement, GraphNode>('g.dish-node')
         .select('circle.node-circle')
+        .transition().duration(240).ease(d3.easeCubicOut)
         .attr('stroke', (d) =>
           d.id === selectedId
             ? 'rgba(28,20,16,0.90)'
@@ -456,7 +471,12 @@ export function useDishGraph(
       d3.select(svgEl)
         .selectAll<SVGGElement, GraphNode>('g.dish-node')
         .select('circle.node-glow')
+        .transition().duration(240).ease(d3.easeCubicOut)
         .attr('stroke-opacity', (d) => (d.id === selectedId ? 0.5 : 0));
     });
   }, [options.selectedDish, svgRef]);
+
+  return {
+    resetZoom: () => resetZoomRef.current?.(),
+  };
 }

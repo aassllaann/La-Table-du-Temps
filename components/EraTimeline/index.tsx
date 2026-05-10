@@ -14,7 +14,7 @@ export default function EraTimeline() {
 
   return (
     <aside
-      className="relative z-10 flex flex-col w-56 flex-shrink-0 h-full py-8 px-3 overflow-y-auto"
+      className="explore-panel-left relative z-10 flex flex-col w-56 flex-shrink-0 h-full py-8 px-3 overflow-y-auto"
       style={{
         background: 'rgba(247,243,234,0.88)',
         borderRight: '1px solid rgba(28,20,16,0.09)',
@@ -24,15 +24,14 @@ export default function EraTimeline() {
       {/* Header */}
       <div className="mb-8 px-2">
         <div
-          className="text-xs tracking-widest uppercase mb-1.5"
           className="font-display"
-          style={{ color: 'rgba(28,20,16,0.38)', letterSpacing: '0.18em' }}
+          style={{ fontSize: '14px', color: 'rgba(28,20,16,0.80)', letterSpacing: '0.03em', marginBottom: 4, fontWeight: 500 }}
         >
           La Table du Temps
         </div>
         <div
-          className="text-base leading-tight"
-          style={{ color: 'rgba(28,20,16,0.75)', fontWeight: 500 }}
+          className="text-xs"
+          style={{ color: 'rgba(28,20,16,0.38)', letterSpacing: '0.12em' }}
         >
           时间的餐桌
         </div>
@@ -54,7 +53,7 @@ export default function EraTimeline() {
               className="flex items-start gap-3 w-full text-left px-3 py-3 rounded-lg transition-all duration-200"
               style={{
                 background: isActive ? `${era.color}10` : 'transparent',
-                borderLeft: `2px solid ${isActive ? era.color : 'transparent'}`,
+                border: isActive ? `1px solid ${era.color}30` : '1px solid transparent',
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
@@ -68,12 +67,16 @@ export default function EraTimeline() {
               }}
             >
               {/* Era index dot */}
-              <div className="flex flex-col items-center gap-1 pt-0.5 flex-shrink-0">
-                <div
+              <div className="flex flex-col items-center gap-1 pt-0.5 flex-shrink-0 self-stretch">
+                <motion.div
                   className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+                  animate={{
+                    scale: isActive ? [1, 1.45, 1] : 1,
+                    opacity: isActive ? 1 : 0.45,
+                  }}
+                  transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     background: era.color,
-                    opacity: isActive ? 1 : 0.45,
                     boxShadow: isActive ? `0 0 6px ${era.color}66` : 'none',
                   }}
                 />
@@ -81,7 +84,7 @@ export default function EraTimeline() {
                   <div
                     className="w-px flex-1"
                     style={{
-                      height: '28px',
+                      minHeight: '16px',
                       background: 'rgba(28,20,16,0.10)',
                       marginTop: '4px',
                     }}
@@ -116,11 +119,10 @@ export default function EraTimeline() {
                       transition={{ duration: 0.28, ease: 'easeOut' }}
                       className="text-xs leading-relaxed overflow-hidden"
                       style={{
-                        color: 'rgba(28,20,16,0.50)',
-                        marginTop: '6px',
-                        borderLeft: `2px solid ${era.color}55`,
-                        paddingLeft: '8px',
+                        color: 'rgba(28,20,16,0.46)',
+                        marginTop: '8px',
                         fontStyle: 'italic',
+                        lineHeight: '1.5',
                       }}
                     >
                       {era.coreConflict}

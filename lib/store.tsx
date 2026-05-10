@@ -15,7 +15,7 @@ const initialState: AppState = {
   selectedDish: null,
   selectedEdge: null,
   remyVisible: false,
-  remySensoryOpen: false,
+  remySensoryOpen: true,
 };
 
 function reducer(state: AppState, action: Action): AppState {
@@ -27,10 +27,10 @@ function reducer(state: AppState, action: Action): AppState {
         selectedDish: null,
         selectedEdge: null,
         remyVisible: action.payload !== null,
-        remySensoryOpen: false,
+        remySensoryOpen: true,
       };
     case 'SET_DISH':
-      return { ...state, selectedDish: action.payload, selectedEdge: null, remySensoryOpen: false };
+      return { ...state, selectedDish: action.payload, selectedEdge: null, remySensoryOpen: true, remyVisible: false };
     case 'SET_EDGE':
       return { ...state, selectedEdge: action.payload, selectedDish: null };
     case 'HIDE_REMY':

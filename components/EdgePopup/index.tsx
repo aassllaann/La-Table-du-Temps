@@ -14,8 +14,7 @@ const EDGE_TYPE_LABEL: Record<string, string> = {
   era_sibling:  '同时期代表作',
 };
 
-const PLACEHOLDER =
-  '（此条转化关系的历史依据待补充——欢迎从 Larousse Gastronomique 或 Wikidata 中提炼）';
+const PLACEHOLDER = '这段故事我还没完全想明白——也许你比我更了解？';
 
 export default function EdgePopup() {
   const selectedEdge = useSelectedEdge();
@@ -89,8 +88,7 @@ export default function EdgePopup() {
             {/* Header: source → target */}
             <div className="flex items-center gap-2 flex-wrap">
               <span
-                className="text-sm font-medium"
-                className="font-display"
+                className="font-display text-sm font-medium"
                 style={{ color: 'rgba(28,20,16,0.88)', fontSize: '16px' }}
               >
                 {source.name_fr}
@@ -99,8 +97,7 @@ export default function EdgePopup() {
                 {isEvolved ? '→' : '⟷'}
               </span>
               <span
-                className="text-sm font-medium"
-                className="font-display"
+                className="font-display text-sm font-medium"
                 style={{ color: 'rgba(28,20,16,0.88)', fontSize: '16px' }}
               >
                 {target.name_fr}
