@@ -463,10 +463,10 @@ export function useDishGraph(
         .transition().duration(240).ease(d3.easeCubicOut)
         .attr('stroke', (d) =>
           d.id === selectedId
-            ? 'rgba(28,20,16,0.90)'
+            ? getEraColor(d.era)
             : 'rgba(28,20,16,0.20)'
         )
-        .attr('stroke-width', (d) => (d.id === selectedId ? 2.5 : 1.5));
+        .attr('stroke-width', (d) => (d.id === selectedId ? 2 : 1.5));
 
       d3.select(svgEl)
         .selectAll<SVGGElement, GraphNode>('g.dish-node')

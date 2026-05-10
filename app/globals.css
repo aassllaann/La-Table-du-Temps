@@ -86,6 +86,11 @@ body::before {
   animation: enter-from-right 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.14s;
 }
 
+/* ── SVG graph: suppress browser focus ring on interactive nodes ─────────── */
+.explore-panel-center svg *:focus {
+  outline: none;
+}
+
 /* ── Accessibility: reduced motion ──────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,

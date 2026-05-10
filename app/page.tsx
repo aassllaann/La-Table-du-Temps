@@ -3,137 +3,294 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-const ERA_COLORS = ['#C8742A', '#B5943E', '#7A9B3E', '#3E8FA6', '#7A5AAA'];
+const ERA_COLORS = ['#8C4A1F', '#9B7A2E', '#4A7A54', '#2A5F82', '#8B1A2B'];
+const EASE = [0.16, 1, 0.3, 1] as const;
 
-const WELCOME =
-  '我是 Remy。这里有五个时代的争论、二十八道菜肴的命运，还有一个漫长的问题：谁有资格定义「美味」？厨房里发生的事，从来不只是烹饪。进来看看。';
+const REMY_QUOTE =
+  '我是 Remy。这里有五个时代的争论、二十八道菜肴的命运，还有一个漫长的问题：谁有资格定义「美味」？厨房里发生的事，从来不只是烹饪。';
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.11, delayChildren: 0.08 } },
+const rightItem = {
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } },
 };
 
-const item = {
-  hidden: { opacity: 0, y: 14 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } },
+const titleWord = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.75, ease: EASE } },
 };
 
 export default function HomePage() {
   return (
     <div
-      className="flex items-center justify-center h-full"
-      style={{ position: 'relative', zIndex: 10 }}
+      style={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'relative',
+        zIndex: 10,
+        overflow: 'hidden',
+      }}
     >
-      <motion.div
-        className="flex flex-col items-center text-center"
-        style={{ maxWidth: 540, padding: '0 32px', marginBottom: '8vh' }}
-        variants={container}
-        initial="hidden"
-        animate="show"
+      {/* ── Era dots ────────────────────────────────────────────────── */}
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 10,
+          paddingLeft: 'clamp(44px, 6vw, 100px)',
+          paddingTop: 22,
+          paddingBottom: 6,
+          flexShrink: 0,
+        }}
       >
-        {/* Era color dots */}
-        <motion.div variants={item} style={{ display: 'flex', gap: 10, marginBottom: 44 }}>
-          {ERA_COLORS.map((color, i) => (
-            <div
-              key={i}
-              style={{
-                width: 7,
-                height: 7,
-                borderRadius: '50%',
-                background: color,
-                opacity: 0.55,
-              }}
-            />
-          ))}
-        </motion.div>
+        {ERA_COLORS.map((color, i) => (
+          <motion.div
+            key={i}
+            style={{
+              width: 7,
+              height: 7,
+              borderRadius: '50%',
+              background: color,
+              flexShrink: 0,
+            }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.44, ease: EASE, delay: 0.06 + i * 0.07 }}
+          />
+        ))}
+      </div>
 
-        {/* Main title */}
-        <motion.h1
-          variants={item}
-          className="font-display"
-          style={{
-            fontSize: 'clamp(40px, 5.5vw, 68px)',
-            fontWeight: 400,
-            letterSpacing: '0.025em',
-            color: 'rgba(28,20,16,0.90)',
-            lineHeight: 1.08,
-            marginBottom: 14,
-          }}
-        >
-          La Table du Temps
-        </motion.h1>
-
-        {/* Chinese subtitle */}
-        <motion.p
-          variants={item}
-          className="font-display"
-          style={{
-            fontSize: 15,
-            letterSpacing: '0.22em',
-            color: 'rgba(155,122,46,0.80)',
-            marginBottom: 44,
-          }}
-        >
-          时间的餐桌
-        </motion.p>
-
-        {/* Divider */}
+      {/* ── Main: 62 / 38 ──────────────────────────────────────────── */}
+      <div
+        style={{
+          flex: 1,
+          display: 'grid',
+          gridTemplateColumns: '62% 38%',
+          position: 'relative',
+          /* visible so "Temps" can cross the column boundary */
+          overflow: 'visible',
+        }}
+      >
+        {/* Vertical divider — absolute inside grid */}
         <motion.div
-          variants={item}
           style={{
-            width: 44,
-            height: 1,
-            background: 'rgba(28,20,16,0.14)',
-            marginBottom: 44,
+            position: 'absolute',
+            left: '62%',
+            top: '10%',
+            bottom: '10%',
+            width: 1,
+            background: 'rgba(28,20,16,0.09)',
+            transformOrigin: 'top',
+            zIndex: 2,
           }}
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ duration: 1.0, ease: EASE, delay: 0.4 }}
         />
 
-        {/* Remy welcome */}
-        <motion.p
-          variants={item}
-          className="font-display"
+        {/* ── Left: Title ──────────────────────────────────────────── */}
+        <div
           style={{
-            fontSize: 17,
-            lineHeight: 1.78,
-            color: 'rgba(28,20,16,0.58)',
-            fontStyle: 'italic',
-            letterSpacing: '0.01em',
-            maxWidth: 420,
-            marginBottom: 36,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            paddingLeft: 'clamp(44px, 6vw, 100px)',
+            paddingRight: 'clamp(24px, 3vw, 48px)',
+            paddingBottom: '8vh',
+            overflow: 'visible',
+            zIndex: 1,
           }}
         >
-          <span
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={{ show: { transition: { staggerChildren: 0.09, delayChildren: 0.16 } } }}
+            style={{ overflow: 'visible' }}
+          >
+            {/* La */}
+            <motion.div variants={titleWord} style={{ lineHeight: 1, marginBottom: '0.12em' }}>
+              <span
+                style={{
+                  display: 'block',
+                  fontFamily: 'var(--font-cormorant), Cormorant Garamond, Georgia, serif',
+                  fontSize: 'clamp(20px, 2.4vw, 36px)',
+                  fontStyle: 'italic',
+                  fontWeight: 400,
+                  color: 'rgba(155,122,46,0.74)',
+                  letterSpacing: '0.05em',
+                }}
+              >
+                La
+              </span>
+            </motion.div>
+
+            {/* Table */}
+            <motion.div variants={titleWord} style={{ lineHeight: 0.96, marginBottom: '0.01em' }}>
+              <span
+                style={{
+                  display: 'block',
+                  fontFamily: 'var(--font-cormorant), Cormorant Garamond, Georgia, serif',
+                  fontSize: 'clamp(74px, 10vw, 162px)',
+                  fontStyle: 'normal',
+                  fontWeight: 500,
+                  color: 'rgba(28,20,16,0.91)',
+                  letterSpacing: '0.005em',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                Table
+              </span>
+            </motion.div>
+
+            {/* du — floats to right edge of column */}
+            <motion.div
+              variants={titleWord}
+              style={{
+                lineHeight: 1,
+                marginBottom: '0.01em',
+                display: 'flex',
+                justifyContent: 'flex-end',
+              }}
+            >
+              <span
+                style={{
+                  display: 'block',
+                  fontFamily: 'var(--font-cormorant), Cormorant Garamond, Georgia, serif',
+                  fontSize: 'clamp(20px, 2.4vw, 36px)',
+                  fontStyle: 'italic',
+                  fontWeight: 400,
+                  color: 'rgba(28,20,16,0.24)',
+                  letterSpacing: '0.16em',
+                }}
+              >
+                du
+              </span>
+            </motion.div>
+
+            {/* Temps — massive, breaks the column boundary */}
+            <motion.div variants={titleWord} style={{ lineHeight: 0.92, overflow: 'visible' }}>
+              <span
+                style={{
+                  display: 'block',
+                  fontFamily: 'var(--font-cormorant), Cormorant Garamond, Georgia, serif',
+                  fontSize: 'clamp(120px, 22vw, 320px)',
+                  fontStyle: 'normal',
+                  fontWeight: 500,
+                  color: 'rgba(28,20,16,0.91)',
+                  letterSpacing: '-0.02em',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                Temps
+              </span>
+            </motion.div>
+          </motion.div>
+
+          {/* Historical date */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.9, ease: EASE, delay: 0.76 }}
             style={{
-              fontStyle: 'normal',
-              marginRight: 9,
-              opacity: 0.45,
-              fontSize: 15,
+              marginTop: 'clamp(14px, 1.8vh, 26px)',
+              fontSize: 10,
+              letterSpacing: '0.22em',
+              color: 'rgba(28,20,16,0.18)',
+              textTransform: 'uppercase',
+              fontFamily: 'Georgia, serif',
             }}
           >
-            🐭
-          </span>
-          {WELCOME}
-        </motion.p>
+            1300 — 2024
+          </motion.p>
+        </div>
 
-        {/* Meta caption */}
-        <motion.p
-          variants={item}
+        {/* ── Right: Narrative ─────────────────────────────────────── */}
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={{ show: { transition: { staggerChildren: 0.11, delayChildren: 0.50 } } }}
           style={{
-            fontSize: 11,
-            letterSpacing: '0.14em',
-            color: 'rgba(28,20,16,0.25)',
-            marginBottom: 52,
-            textTransform: 'uppercase',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            paddingLeft: 'clamp(40px, 5vw, 80px)',
+            paddingRight: 'clamp(40px, 5.5vw, 88px)',
+            paddingBottom: '8vh',
+            zIndex: 3,
+            position: 'relative',
           }}
         >
-          五个时代 · 二十八道菜肴 · 两种演化关系
-        </motion.p>
+          {/* Chinese subtitle */}
+          <motion.p
+            variants={rightItem}
+            style={{
+              fontFamily: 'var(--font-cormorant), Cormorant Garamond, Georgia, serif',
+              fontSize: 'clamp(11px, 0.95vw, 14px)',
+              letterSpacing: '0.30em',
+              color: 'rgba(155,122,46,0.68)',
+              marginBottom: 'clamp(18px, 2.2vh, 28px)',
+            }}
+          >
+            时间的餐桌
+          </motion.p>
 
-        {/* CTA */}
-        <motion.div variants={item}>
-          <CTALink />
+          {/* Rule */}
+          <motion.div
+            variants={rightItem}
+            style={{
+              width: 28,
+              height: 1,
+              background: 'rgba(28,20,16,0.14)',
+              marginBottom: 'clamp(18px, 2.2vh, 28px)',
+            }}
+          />
+
+          {/* Remy quote */}
+          <motion.p
+            variants={rightItem}
+            style={{
+              fontFamily: 'var(--font-cormorant), Cormorant Garamond, Georgia, serif',
+              fontSize: 'clamp(15px, 1.4vw, 21px)',
+              lineHeight: 1.75,
+              color: 'rgba(28,20,16,0.54)',
+              fontStyle: 'italic',
+              marginBottom: 'clamp(20px, 2.4vh, 32px)',
+            }}
+          >
+            <span
+              style={{
+                fontStyle: 'normal',
+                opacity: 0.35,
+                marginRight: 8,
+                fontSize: '0.82em',
+              }}
+            >
+              🐭
+            </span>
+            {REMY_QUOTE}
+          </motion.p>
+
+          {/* Meta */}
+          <motion.p
+            variants={rightItem}
+            style={{
+              fontSize: 10,
+              letterSpacing: '0.14em',
+              color: 'rgba(28,20,16,0.20)',
+              textTransform: 'uppercase',
+              fontFamily: 'Georgia, serif',
+              marginBottom: 'clamp(24px, 3vh, 42px)',
+            }}
+          >
+            五个时代 · 二十八道菜肴 · 两种演化关系
+          </motion.p>
+
+          {/* CTA */}
+          <motion.div variants={rightItem}>
+            <CTALink />
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -142,32 +299,45 @@ function CTALink() {
   return (
     <Link
       href="/explore"
-      className="font-display"
       style={{
-        display: 'inline-block',
-        fontSize: 14,
-        letterSpacing: '0.14em',
-        color: 'rgba(28,20,16,0.70)',
-        border: '1px solid rgba(28,20,16,0.22)',
-        padding: '13px 40px',
-        borderRadius: 2,
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 10,
+        fontFamily: 'var(--font-cormorant), Cormorant Garamond, Georgia, serif',
+        fontSize: 'clamp(14px, 1.15vw, 17px)',
+        letterSpacing: '0.12em',
+        color: 'rgba(28,20,16,0.58)',
         textDecoration: 'none',
-        transition: 'background 0.18s ease, color 0.18s ease, border-color 0.18s ease',
+        position: 'relative',
+        paddingBottom: 4,
+        transition: 'color 0.2s ease',
       }}
       onMouseEnter={(e) => {
-        const el = e.currentTarget;
-        el.style.background = 'rgba(28,20,16,0.88)';
-        el.style.color = '#F7F3EA';
-        el.style.borderColor = 'rgba(28,20,16,0.88)';
+        e.currentTarget.style.color = 'rgba(28,20,16,0.90)';
+        const line = e.currentTarget.querySelector<HTMLElement>('[data-underline]');
+        if (line) { line.style.width = '100%'; line.style.opacity = '0.48'; }
       }}
       onMouseLeave={(e) => {
-        const el = e.currentTarget;
-        el.style.background = 'transparent';
-        el.style.color = 'rgba(28,20,16,0.70)';
-        el.style.borderColor = 'rgba(28,20,16,0.22)';
+        e.currentTarget.style.color = 'rgba(28,20,16,0.58)';
+        const line = e.currentTarget.querySelector<HTMLElement>('[data-underline]');
+        if (line) { line.style.width = '22px'; line.style.opacity = '0.22'; }
       }}
     >
-      开始探索 →
+      <span>开始探索</span>
+      <span style={{ letterSpacing: 0 }}>→</span>
+      <span
+        data-underline
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          height: 1,
+          width: 22,
+          background: 'rgba(28,20,16,0.88)',
+          opacity: 0.22,
+          transition: 'width 0.3s cubic-bezier(0.16,1,0.3,1), opacity 0.2s ease',
+        }}
+      />
     </Link>
   );
 }
