@@ -16,9 +16,9 @@ export default function RemySensory({ dish }: Props) {
 
   return (
     <div
-      className="rounded-xl overflow-hidden"
+      className="rounded-lg overflow-hidden"
       style={{
-        border: `1px solid ${sensoryOpen ? eraColor + '44' : 'rgba(255,255,255,0.08)'}`,
+        border: `1px solid ${sensoryOpen ? eraColor + '40' : 'rgba(28,20,16,0.09)'}`,
         transition: 'border-color 0.3s ease',
       }}
     >
@@ -27,15 +27,16 @@ export default function RemySensory({ dish }: Props) {
         className="flex items-center gap-2.5 w-full px-4 py-3 text-left transition-all duration-150"
         style={{
           background: sensoryOpen
-            ? `${eraColor}12`
-            : 'rgba(255,255,255,0.03)',
+            ? `${eraColor}0C`
+            : 'rgba(28,20,16,0.025)',
         }}
         onClick={() => dispatch({ type: 'TOGGLE_SENSORY' })}
       >
         <span className="text-lg select-none">🐭</span>
         <span
           className="text-sm flex-1"
-          style={{ color: sensoryOpen ? eraColor : 'rgba(240,232,208,0.55)' }}
+          className="font-display"
+          style={{ color: sensoryOpen ? eraColor : 'rgba(28,20,16,0.52)', fontSize: '15px' }}
         >
           听 Remy 说
         </span>
@@ -43,13 +44,13 @@ export default function RemySensory({ dish }: Props) {
           animate={{ rotate: sensoryOpen ? 180 : 0 }}
           transition={{ duration: 0.25 }}
           className="text-xs"
-          style={{ color: 'rgba(240,232,208,0.3)' }}
+          style={{ color: 'rgba(28,20,16,0.28)' }}
         >
           ▾
         </motion.span>
       </button>
 
-      {/* Collapsible content (Voice C) */}
+      {/* Collapsible content */}
       <AnimatePresence initial={false}>
         {sensoryOpen && (
           <motion.div
@@ -59,10 +60,11 @@ export default function RemySensory({ dish }: Props) {
             transition={{ duration: 0.3, ease: 'easeOut' }}
             style={{ overflow: 'hidden' }}
           >
-            <div className="px-4 pb-4 pt-1">
+            <div className="px-4 pb-4 pt-1" style={{ borderTop: `1px solid ${eraColor}20` }}>
               <p
                 className="text-sm leading-relaxed italic"
-                style={{ color: 'rgba(240,232,208,0.68)' }}
+                className="font-display"
+                style={{ color: 'rgba(28,20,16,0.65)', fontSize: '15px' }}
               >
                 &ldquo;{dish.remySensory}&rdquo;
               </p>

@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useSelectedEra, useAppDispatch } from '@/lib/store';
 import type { Era } from '@/lib/types';
 import erasData from '@/data/eras.json';
+import OrnamentalDivider from '@/components/OrnamentalDivider';
 
 const eras = erasData as unknown as Era[];
 
@@ -15,24 +16,28 @@ export default function EraTimeline() {
     <aside
       className="relative z-10 flex flex-col w-56 flex-shrink-0 h-full py-8 px-3 overflow-y-auto"
       style={{
-        background: 'rgba(15,12,7,0.55)',
-        borderRight: '1px solid rgba(255,255,255,0.07)',
+        background: 'rgba(247,243,234,0.88)',
+        borderRight: '1px solid rgba(28,20,16,0.09)',
         backdropFilter: 'blur(12px)',
       }}
     >
       {/* Header */}
       <div className="mb-8 px-2">
         <div
-          className="text-xs tracking-widest uppercase mb-1"
-          style={{ color: 'rgba(240,232,208,0.4)', fontFamily: 'Georgia, serif' }}
+          className="text-xs tracking-widest uppercase mb-1.5"
+          className="font-display"
+          style={{ color: 'rgba(28,20,16,0.38)', letterSpacing: '0.18em' }}
         >
           La Table du Temps
         </div>
         <div
-          className="text-base font-medium leading-tight"
-          style={{ color: 'rgba(240,232,208,0.85)' }}
+          className="text-base leading-tight"
+          style={{ color: 'rgba(28,20,16,0.75)', fontWeight: 500 }}
         >
           时间的餐桌
+        </div>
+        <div className="mt-3">
+          <OrnamentalDivider lineColor="rgba(28,20,16,0.12)" dotColor="rgba(139,26,43,0.45)" />
         </div>
       </div>
 
@@ -48,12 +53,12 @@ export default function EraTimeline() {
               }
               className="flex items-start gap-3 w-full text-left px-3 py-3 rounded-lg transition-all duration-200"
               style={{
-                background: isActive ? 'rgba(255,255,255,0.08)' : 'transparent',
+                background: isActive ? `${era.color}10` : 'transparent',
                 borderLeft: `2px solid ${isActive ? era.color : 'transparent'}`,
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
-                  (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.04)';
+                  (e.currentTarget as HTMLElement).style.background = 'rgba(28,20,16,0.04)';
                 }
               }}
               onMouseLeave={(e) => {
@@ -68,8 +73,8 @@ export default function EraTimeline() {
                   className="w-2.5 h-2.5 rounded-full flex-shrink-0"
                   style={{
                     background: era.color,
-                    opacity: isActive ? 1 : 0.5,
-                    boxShadow: isActive ? `0 0 8px ${era.color}88` : 'none',
+                    opacity: isActive ? 1 : 0.45,
+                    boxShadow: isActive ? `0 0 6px ${era.color}66` : 'none',
                   }}
                 />
                 {index < eras.length - 1 && (
@@ -77,7 +82,7 @@ export default function EraTimeline() {
                     className="w-px flex-1"
                     style={{
                       height: '28px',
-                      background: 'rgba(255,255,255,0.1)',
+                      background: 'rgba(28,20,16,0.10)',
                       marginTop: '4px',
                     }}
                   />
@@ -89,14 +94,14 @@ export default function EraTimeline() {
                 <div
                   className="text-xs font-medium leading-tight mb-0.5 transition-colors duration-200"
                   style={{
-                    color: isActive ? era.color : 'rgba(240,232,208,0.7)',
+                    color: isActive ? era.color : 'rgba(28,20,16,0.65)',
                   }}
                 >
                   {era.label.split(' (')[0]}
                 </div>
                 <div
                   className="text-xs leading-tight"
-                  style={{ color: 'rgba(240,232,208,0.35)' }}
+                  style={{ color: 'rgba(28,20,16,0.32)', letterSpacing: '0.04em' }}
                 >
                   {era.period}
                 </div>
@@ -111,10 +116,11 @@ export default function EraTimeline() {
                       transition={{ duration: 0.28, ease: 'easeOut' }}
                       className="text-xs leading-relaxed overflow-hidden"
                       style={{
-                        color: 'rgba(240,232,208,0.52)',
+                        color: 'rgba(28,20,16,0.50)',
                         marginTop: '6px',
                         borderLeft: `2px solid ${era.color}55`,
                         paddingLeft: '8px',
+                        fontStyle: 'italic',
                       }}
                     >
                       {era.coreConflict}
@@ -130,7 +136,7 @@ export default function EraTimeline() {
       {/* Footer hint */}
       <div
         className="mt-6 px-2 text-xs leading-relaxed"
-        style={{ color: 'rgba(240,232,208,0.25)' }}
+        style={{ color: 'rgba(28,20,16,0.28)', letterSpacing: '0.02em' }}
       >
         点击时期进入图谱
         <br />

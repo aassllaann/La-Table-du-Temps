@@ -14,10 +14,10 @@ function EmptyState() {
       exit={{ opacity: 0 }}
       className="flex flex-col items-center justify-center h-full gap-4 px-8 text-center"
     >
-      <div className="text-5xl select-none opacity-20">🍽</div>
+      <div className="text-5xl select-none opacity-[0.18]">🍽</div>
       <p
-        className="text-sm leading-relaxed"
-        style={{ color: 'rgba(240,232,208,0.25)' }}
+        className="text-sm leading-relaxed italic font-display"
+        style={{ color: 'rgba(28,20,16,0.32)' }}
       >
         点击图谱中的菜肴节点
         <br />
@@ -35,8 +35,8 @@ export default function DishPanel() {
     <aside
       className="relative z-10 flex flex-col w-96 flex-shrink-0 h-full overflow-hidden"
       style={{
-        background: 'rgba(15,12,7,0.50)',
-        borderLeft: '1px solid rgba(255,255,255,0.07)',
+        background: 'rgba(247,243,234,0.88)',
+        borderLeft: '1px solid rgba(28,20,16,0.09)',
         backdropFilter: 'blur(16px)',
       }}
     >
@@ -54,22 +54,22 @@ export default function DishPanel() {
             {/* Panel header */}
             <div
               className="flex items-center justify-between px-6 py-4 flex-shrink-0"
-              style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+              style={{ borderBottom: '1px solid rgba(28,20,16,0.08)' }}
             >
               <span
                 className="text-xs tracking-widest uppercase"
-                style={{ color: 'rgba(240,232,208,0.3)' }}
+                style={{ color: 'rgba(28,20,16,0.36)', letterSpacing: '0.16em' }}
               >
                 菜肴详情
               </span>
               <button
                 className="text-xs transition-colors duration-150"
-                style={{ color: 'rgba(240,232,208,0.25)' }}
+                style={{ color: 'rgba(28,20,16,0.28)' }}
                 onMouseEnter={(e) =>
-                  ((e.target as HTMLElement).style.color = 'rgba(240,232,208,0.6)')
+                  ((e.target as HTMLElement).style.color = 'rgba(28,20,16,0.65)')
                 }
                 onMouseLeave={(e) =>
-                  ((e.target as HTMLElement).style.color = 'rgba(240,232,208,0.25)')
+                  ((e.target as HTMLElement).style.color = 'rgba(28,20,16,0.28)')
                 }
                 onClick={() => dispatch({ type: 'SET_DISH', payload: null })}
               >
@@ -82,7 +82,7 @@ export default function DishPanel() {
               <DishInfo dish={selectedDish} />
               <div
                 className="border-t"
-                style={{ borderColor: 'rgba(255,255,255,0.06)' }}
+                style={{ borderColor: 'rgba(28,20,16,0.08)' }}
               />
               <RemySensory dish={selectedDish} />
             </div>

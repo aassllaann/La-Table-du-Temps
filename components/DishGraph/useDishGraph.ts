@@ -104,7 +104,7 @@ export function useDishGraph(
         .attr('orient', 'auto')
         .append('path')
         .attr('d', 'M0,-4L8,0L0,4')
-        .attr('fill', '#C8A84B')
+        .attr('fill', '#9B7A2E')
         .attr('fill-opacity', 0.9);
 
       // Zoom container
@@ -112,7 +112,7 @@ export function useDishGraph(
 
       const zoom = d3
         .zoom<SVGSVGElement, unknown>()
-        .scaleExtent([0.3, 4])
+        .scaleExtent([1, 4])
         .on('zoom', (event) => {
           g.attr('transform', event.transform.toString());
         });
@@ -177,7 +177,7 @@ export function useDishGraph(
           .attr('dominant-baseline', 'middle')
           .style('font-size', '9px')
           .style('font-family', 'Georgia, serif')
-          .style('fill', 'rgba(240,232,208,0.32)')
+          .style('fill', 'rgba(28,20,16,0.38)')
           .text(period);
 
         // Vertical tick on divider
@@ -235,7 +235,7 @@ export function useDishGraph(
         })
         .attr('fill', 'none')
         .attr('stroke', (d) =>
-          d.type === 'evolved_from' ? '#C8A84B' : '#7A6040'
+          d.type === 'evolved_from' ? '#9B7A2E' : '#8C7060'
         )
         .attr('stroke-opacity', (d) =>
           d.type === 'evolved_from' ? 0.65 : 0.28
@@ -303,7 +303,7 @@ export function useDishGraph(
         .attr('r', (d) => getNodeRadius(d.chef !== null))
         .attr('fill', (d) => getEraColor(d.era))
         .attr('fill-opacity', 0.9)
-        .attr('stroke', 'rgba(240,232,208,0.2)')
+        .attr('stroke', 'rgba(28,20,16,0.20)')
         .attr('stroke-width', 1.5);
 
       // French name label
@@ -314,7 +314,7 @@ export function useDishGraph(
         .attr('text-anchor', 'middle')
         .style('font-size', '9.5px')
         .style('font-family', 'Georgia, serif')
-        .style('fill', 'rgba(240,232,208,0.65)')
+        .style('fill', 'rgba(28,20,16,0.68)')
         .style('pointer-events', 'none')
         .style('user-select', 'none')
         .text((d) => d.name_fr);
@@ -342,8 +342,8 @@ export function useDishGraph(
             .select('text.node-label')
             .style('fill', (n) =>
               connectedIds.has(n.id)
-                ? 'rgba(240,232,208,0.92)'
-                : 'rgba(240,232,208,0.12)'
+                ? 'rgba(28,20,16,0.92)'
+                : 'rgba(28,20,16,0.12)'
             );
 
           allEdgePaths.attr('stroke-opacity', (l) => {
@@ -360,7 +360,7 @@ export function useDishGraph(
           );
           nodeGroup
             .select<SVGTextElement>('text.node-label')
-            .style('fill', 'rgba(240,232,208,0.65)');
+            .style('fill', 'rgba(28,20,16,0.68)');
           allEdgePaths.attr('stroke-opacity', (l) => {
             if (!selectedEra) return l.type === 'evolved_from' ? 0.65 : 0.28;
             const s = (l.source as GraphNode).era;
@@ -448,8 +448,8 @@ export function useDishGraph(
         .select('circle.node-circle')
         .attr('stroke', (d) =>
           d.id === selectedId
-            ? 'rgba(240,232,208,0.95)'
-            : 'rgba(240,232,208,0.2)'
+            ? 'rgba(28,20,16,0.90)'
+            : 'rgba(28,20,16,0.20)'
         )
         .attr('stroke-width', (d) => (d.id === selectedId ? 2.5 : 1.5));
 

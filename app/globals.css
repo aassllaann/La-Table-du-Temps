@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f0c07;
-  --foreground: #f0e8d0;
+  --background: #F7F3EA;
+  --foreground: #1C1410;
+  --accent-burgundy: #8B1A2B;
+  --accent-gold: #9B7A2E;
+  --panel-bg: rgba(247, 243, 234, 0.90);
+  --border-subtle: rgba(28, 20, 16, 0.09);
+  --text-muted: rgba(28, 20, 16, 0.45);
 }
 
 @theme inline {
@@ -23,13 +28,29 @@ body {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
+}
+
+/* Subtle paper texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+.font-display {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', 'Georgia', serif;
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-track {
@@ -37,6 +58,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(28, 20, 16, 0.18);
   border-radius: 2px;
 }

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { getEraColor } from '@/lib/utils';
 import type { Dish } from '@/lib/types';
+import OrnamentalDivider from '@/components/OrnamentalDivider';
 
 const ERA_LABELS: Record<string, string> = {
   medieval:     '中世纪宫廷菜',
@@ -31,12 +32,12 @@ export default function DishInfo({ dish }: Props) {
       {/* Era badge */}
       <div className="flex items-center gap-2">
         <div
-          className="w-2 h-2 rounded-full flex-shrink-0"
+          className="w-1.5 h-1.5 rounded-full flex-shrink-0"
           style={{ background: eraColor }}
         />
         <span
           className="text-xs tracking-wide"
-          style={{ color: eraColor }}
+          style={{ color: eraColor, letterSpacing: '0.08em' }}
         >
           {eraLabel} · {dish.origin}
         </span>
@@ -45,23 +46,26 @@ export default function DishInfo({ dish }: Props) {
       {/* Names */}
       <div>
         <h2
-          className="text-2xl font-medium leading-tight mb-1"
-          style={{ color: 'rgba(240,232,208,0.95)', fontFamily: 'Georgia, serif' }}
+          className="text-2xl leading-tight mb-1"
+          className="font-display"
+          style={{ color: 'rgba(28,20,16,0.92)', fontWeight: 500, letterSpacing: '0.01em' }}
         >
           {dish.name_fr}
         </h2>
         <p
           className="text-base"
-          style={{ color: 'rgba(240,232,208,0.55)' }}
+          style={{ color: 'rgba(28,20,16,0.48)', fontWeight: 400 }}
         >
           {dish.name_zh}
         </p>
       </div>
 
-      {/* Description (Voice B) */}
+      <OrnamentalDivider lineColor={`${eraColor}33`} dotColor={`${eraColor}66`} />
+
+      {/* Description */}
       <p
         className="text-sm leading-relaxed"
-        style={{ color: 'rgba(240,232,208,0.72)' }}
+        style={{ color: 'rgba(28,20,16,0.68)' }}
       >
         {dish.description}
       </p>
@@ -69,8 +73,8 @@ export default function DishInfo({ dish }: Props) {
       {/* Key ingredients */}
       <div>
         <div
-          className="text-xs tracking-widest uppercase mb-2"
-          style={{ color: 'rgba(240,232,208,0.3)' }}
+          className="text-xs uppercase mb-2"
+          style={{ color: 'rgba(28,20,16,0.35)', letterSpacing: '0.14em' }}
         >
           关键食材
         </div>
@@ -80,9 +84,9 @@ export default function DishInfo({ dish }: Props) {
               key={ing}
               className="text-xs px-2.5 py-1 rounded-full"
               style={{
-                background: `${eraColor}18`,
-                border: `1px solid ${eraColor}33`,
-                color: 'rgba(240,232,208,0.65)',
+                background: `${eraColor}10`,
+                border: `1px solid ${eraColor}30`,
+                color: 'rgba(28,20,16,0.65)',
               }}
             >
               {ing}
@@ -96,13 +100,13 @@ export default function DishInfo({ dish }: Props) {
         <div className="flex items-center gap-2">
           <span
             className="text-xs"
-            style={{ color: 'rgba(240,232,208,0.35)' }}
+            style={{ color: 'rgba(28,20,16,0.35)', letterSpacing: '0.04em' }}
           >
             相关厨师
           </span>
           <span
-            className="text-xs font-medium"
-            style={{ color: 'rgba(240,232,208,0.6)' }}
+            className="text-xs italic font-display"
+            style={{ color: 'rgba(28,20,16,0.62)' }}
           >
             {dish.chef}
           </span>

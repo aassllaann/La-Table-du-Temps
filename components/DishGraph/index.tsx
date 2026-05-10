@@ -43,11 +43,12 @@ export default function DishGraph() {
     <div className="relative flex-1 h-full overflow-hidden">
       {/* Legend */}
       <div
-        className="absolute bottom-5 right-5 z-10 flex flex-col gap-2 px-3 py-2.5 rounded-lg"
+        className="absolute bottom-5 right-5 z-10 flex flex-col gap-2 px-3.5 py-3 rounded-lg"
         style={{
-          background: 'rgba(15,12,7,0.78)',
+          background: 'rgba(247,243,234,0.92)',
           backdropFilter: 'blur(10px)',
-          border: '1px solid rgba(255,255,255,0.07)',
+          border: '1px solid rgba(28,20,16,0.10)',
+          boxShadow: '0 1px 8px rgba(28,20,16,0.06)',
         }}
       >
         <div className="flex items-center gap-2">
@@ -55,12 +56,12 @@ export default function DishGraph() {
             <path
               d="M0,5 C8,5 18,5 26,5"
               fill="none"
-              stroke="#C8A84B"
+              stroke="#9B7A2E"
               strokeWidth="1.5"
             />
-            <polygon points="26,2 34,5 26,8" fill="#C8A84B" />
+            <polygon points="26,2 34,5 26,8" fill="#9B7A2E" />
           </svg>
-          <span className="text-xs" style={{ color: 'rgba(240,232,208,0.42)' }}>
+          <span className="text-xs" style={{ color: 'rgba(28,20,16,0.50)', letterSpacing: '0.03em' }}>
             演化自
           </span>
         </div>
@@ -69,12 +70,12 @@ export default function DishGraph() {
             <path
               d="M0,5 Q17,1 34,5"
               fill="none"
-              stroke="#7A6040"
+              stroke="#8C7060"
               strokeWidth="1"
               strokeDasharray="5,4"
             />
           </svg>
-          <span className="text-xs" style={{ color: 'rgba(240,232,208,0.42)' }}>
+          <span className="text-xs" style={{ color: 'rgba(28,20,16,0.50)', letterSpacing: '0.03em' }}>
             同时期代表作
           </span>
         </div>
@@ -85,16 +86,17 @@ export default function DishGraph() {
         <div
           className="absolute top-4 left-1/2 -translate-x-1/2 z-10 pointer-events-none"
           style={{
-            background: 'rgba(15,12,7,0.65)',
+            background: 'rgba(247,243,234,0.88)',
             backdropFilter: 'blur(8px)',
-            border: '1px solid rgba(255,255,255,0.07)',
+            border: '1px solid rgba(28,20,16,0.09)',
             borderRadius: '20px',
-            padding: '5px 14px',
+            padding: '5px 16px',
+            boxShadow: '0 1px 6px rgba(28,20,16,0.05)',
           }}
         >
           <span
             className="text-xs tracking-wide"
-            style={{ color: 'rgba(240,232,208,0.35)' }}
+            style={{ color: 'rgba(28,20,16,0.38)', letterSpacing: '0.06em' }}
           >
             滚轮缩放 · 拖拽平移 · 悬停查看关系
           </span>

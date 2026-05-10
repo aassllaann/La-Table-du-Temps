@@ -1,11 +1,11 @@
 import type { EraId, EdgeType } from './types';
 
 const ERA_COLORS: Record<EraId, string> = {
-  medieval:     '#C8742A',
-  careme:       '#B5943E',
-  escoffier:    '#7A9B3E',
-  nouvelle:     '#3E8FA6',
-  contemporary: '#7A5AAA',
+  medieval:     '#8C4A1F',
+  careme:       '#9B7A2E',
+  escoffier:    '#4A7A54',
+  nouvelle:     '#2A5F82',
+  contemporary: '#8B1A2B',
 };
 
 export function getEraColor(eraId: EraId): string {

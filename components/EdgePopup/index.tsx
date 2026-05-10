@@ -25,7 +25,6 @@ export default function EdgePopup() {
   const source = allDishes.find((d) => d.id === selectedEdge?.sourceId);
   const target = allDishes.find((d) => d.id === selectedEdge?.targetId);
 
-  // Close on outside click
   useEffect(() => {
     if (!selectedEdge) return;
     function handleClick(e: MouseEvent) {
@@ -37,7 +36,6 @@ export default function EdgePopup() {
     return () => document.removeEventListener('mousedown', handleClick);
   }, [selectedEdge, dispatch]);
 
-  // Close on Escape
   useEffect(() => {
     if (!selectedEdge) return;
     function handleKey(e: KeyboardEvent) {
@@ -47,13 +45,12 @@ export default function EdgePopup() {
     return () => document.removeEventListener('keydown', handleKey);
   }, [selectedEdge, dispatch]);
 
-  // Compute popup position — clamp to viewport
   function getPosition() {
     if (!selectedEdge) return { x: 0, y: 0 };
     const W = typeof window !== 'undefined' ? window.innerWidth : 1200;
     const H = typeof window !== 'undefined' ? window.innerHeight : 800;
     const POPUP_W = 340;
-    const POPUP_H = 240; // estimated
+    const POPUP_H = 240;
     const OFFSET = 14;
     let x = selectedEdge.x + OFFSET;
     let y = selectedEdge.y - OFFSET;
@@ -64,8 +61,7 @@ export default function EdgePopup() {
   }
 
   const pos = getPosition();
-
-  const accentColor = source ? getEraColor(source.era) : '#C8A84B';
+  const accentColor = source ? getEraColor(source.era) : '#9B7A2E';
   const isEvolved = selectedEdge?.type === 'evolved_from';
 
   return (
@@ -82,19 +78,20 @@ export default function EdgePopup() {
           transition={{ duration: 0.2, ease: 'easeOut' }}
         >
           <div
-            className="rounded-2xl px-5 py-4 flex flex-col gap-3"
+            className="rounded-xl px-5 py-4 flex flex-col gap-3"
             style={{
-              background: 'rgba(15,12,7,0.94)',
+              background: 'rgba(247,243,234,0.97)',
               backdropFilter: 'blur(20px)',
-              border: `1px solid ${accentColor}44`,
-              boxShadow: `0 8px 40px rgba(0,0,0,0.7), 0 0 24px ${accentColor}14`,
+              border: `1px solid ${accentColor}38`,
+              boxShadow: `0 8px 32px rgba(28,20,16,0.12), 0 0 20px ${accentColor}10`,
             }}
           >
             {/* Header: source → target */}
             <div className="flex items-center gap-2 flex-wrap">
               <span
                 className="text-sm font-medium"
-                style={{ color: 'rgba(240,232,208,0.9)', fontFamily: 'Georgia, serif' }}
+                className="font-display"
+                style={{ color: 'rgba(28,20,16,0.88)', fontSize: '16px' }}
               >
                 {source.name_fr}
               </span>
@@ -103,7 +100,8 @@ export default function EdgePopup() {
               </span>
               <span
                 className="text-sm font-medium"
-                style={{ color: 'rgba(240,232,208,0.9)', fontFamily: 'Georgia, serif' }}
+                className="font-display"
+                style={{ color: 'rgba(28,20,16,0.88)', fontSize: '16px' }}
               >
                 {target.name_fr}
               </span>
@@ -111,20 +109,19 @@ export default function EdgePopup() {
 
             {/* Sub-names */}
             <div className="flex items-center gap-2 flex-wrap -mt-1">
-              <span className="text-xs" style={{ color: 'rgba(240,232,208,0.4)' }}>
+              <span className="text-xs" style={{ color: 'rgba(28,20,16,0.42)' }}>
                 {source.name_zh}
               </span>
-              <span className="text-xs" style={{ color: 'rgba(240,232,208,0.25)' }}>
+              <span className="text-xs" style={{ color: 'rgba(28,20,16,0.26)' }}>
                 {isEvolved ? '→' : '⟷'}
               </span>
-              <span className="text-xs" style={{ color: 'rgba(240,232,208,0.4)' }}>
+              <span className="text-xs" style={{ color: 'rgba(28,20,16,0.42)' }}>
                 {target.name_zh}
               </span>
             </div>
 
             {/* Edge type badge */}
             <div className="flex items-center gap-2">
-              {/* Icon */}
               <svg width="28" height="8" className="flex-shrink-0">
                 {isEvolved ? (
                   <>
@@ -134,16 +131,17 @@ export default function EdgePopup() {
                 ) : (
                   <line
                     x1="0" y1="4" x2="28" y2="4"
-                    stroke="#7A6040" strokeWidth="1" strokeDasharray="5,4"
+                    stroke="#8C7060" strokeWidth="1" strokeDasharray="5,4"
                   />
                 )}
               </svg>
               <span
                 className="text-xs px-2 py-0.5 rounded-full"
                 style={{
-                  background: `${accentColor}18`,
-                  border: `1px solid ${accentColor}33`,
+                  background: `${accentColor}12`,
+                  border: `1px solid ${accentColor}28`,
                   color: accentColor,
+                  letterSpacing: '0.04em',
                 }}
               >
                 {EDGE_TYPE_LABEL[selectedEdge.type]}
@@ -151,16 +149,15 @@ export default function EdgePopup() {
             </div>
 
             {/* Divider */}
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }} />
+            <div style={{ borderTop: '1px solid rgba(28,20,16,0.08)' }} />
 
             {/* Reason */}
             <p
-              className="text-sm leading-relaxed"
+              className="text-sm leading-relaxed font-display"
               style={{
-                color: selectedEdge.reason
-                  ? 'rgba(240,232,208,0.75)'
-                  : 'rgba(240,232,208,0.3)',
+                color: selectedEdge.reason ? 'rgba(28,20,16,0.68)' : 'rgba(28,20,16,0.32)',
                 fontStyle: selectedEdge.reason ? 'normal' : 'italic',
+                fontSize: '14px',
               }}
             >
               {selectedEdge.reason ?? PLACEHOLDER}
@@ -169,12 +166,12 @@ export default function EdgePopup() {
             {/* Close */}
             <button
               className="self-end text-xs transition-colors duration-150 mt-1"
-              style={{ color: 'rgba(240,232,208,0.22)' }}
+              style={{ color: 'rgba(28,20,16,0.24)' }}
               onMouseEnter={(e) =>
-                ((e.target as HTMLElement).style.color = 'rgba(240,232,208,0.55)')
+                ((e.target as HTMLElement).style.color = 'rgba(28,20,16,0.55)')
               }
               onMouseLeave={(e) =>
-                ((e.target as HTMLElement).style.color = 'rgba(240,232,208,0.22)')
+                ((e.target as HTMLElement).style.color = 'rgba(28,20,16,0.24)')
               }
               onClick={() => dispatch({ type: 'SET_EDGE', payload: null })}
             >
