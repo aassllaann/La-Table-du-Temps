@@ -7,8 +7,15 @@
     "origin": "法国，14世纪",
     "description": "以葡萄酒为基底，加入肉桂、姜、蜂蜜熬制的热饮料。中世纪宫廷宴席的开场饮品，香料用量是主人财力的直接展示。最早见于 Taillevent 的《Le Viandier》（14世纪）。",
     "remySensory": "这个气味……肉桂、丁香还有某种我说不清楚的温热。如果嗅觉有颜色，这就是深红色的。我第一次闻到它的时候，以为是热糖，但不对——底下有什么更古老的东西，像土地，像树皮。说不清楚的那种。",
-    "keyIngredients": ["葡萄酒", "肉桂", "姜", "蜂蜜", "丁香"],
-    "chef": "Taillevent"
+    "keyIngredients": [
+      "葡萄酒",
+      "肉桂",
+      "姜",
+      "蜂蜜",
+      "丁香"
+    ],
+    "chef": "Taillevent",
+    "image": "/dishes/hypocras.jpg"
   },
   {
     "id": "blanc-manger",
@@ -18,8 +25,14 @@
     "origin": "法国，13世纪",
     "description": "由杏仁奶、鸡肉末、糖和大米粉制成的白色冷食，因其纯白色而得名。中世纪医学认为白色食物有净化功效，因此备受宫廷喜爱。是当代 Blancmange 甜点的直系祖先。",
     "remySensory": "杏仁的气味是一种奇怪的甜——不是果糖的甜，是坚果深处某种接近花香的东西。加了鸡肉之后我以为会冲突，但它们居然在白色里和平共处了。那个颜色是刻意选的，我确定——白色在那个年代不是普通颜色。",
-    "keyIngredients": ["杏仁奶", "鸡肉", "糖", "大米粉"],
-    "chef": null
+    "keyIngredients": [
+      "杏仁奶",
+      "鸡肉",
+      "糖",
+      "大米粉"
+    ],
+    "chef": null,
+    "image": "/dishes/blanc-manger.jpg"
   },
   {
     "id": "potage",
@@ -29,8 +42,14 @@
     "origin": "法国，14世纪",
     "description": "中世纪厨房的核心料理，以肉骨、蔬菜长时间熬制，以面包增稠。越厚重浓稠越是佳品——在那个年代，端出稀薄的汤等于承认穷。",
     "remySensory": "骨髓在长时间熬煮后释放出的气味，带着某种疲惫的诚实。不像香料那样夸耀，就是肉和骨头和时间在一起待了很久之后说的话。我喜欢这种气味，因为它不试图假装成别的什么。",
-    "keyIngredients": ["肉骨", "蔬菜", "面包", "香料"],
-    "chef": null
+    "keyIngredients": [
+      "肉骨",
+      "蔬菜",
+      "面包",
+      "香料"
+    ],
+    "chef": null,
+    "image": "/dishes/potage.jpg"
   },
   {
     "id": "oublie",
@@ -40,8 +59,13 @@
     "origin": "法国，13世纪",
     "description": "用铁夹烘烤的薄脆卷饼，由流动商贩在巴黎街头叫卖，是中世纪少见的平民甜食。名字来自拉丁语「oblata」（祭品），后来演化为 Gaufrette 华夫饼的前身。",
     "remySensory": "焦糖和小麦在高温下相遇的气味——简单，直接，没有歉意。我觉得所有好的街头食物都有这种特质：它们不需要理由，它们只是在那里。香料葡萄酒告诉你它值多少钱，Oublie 只告诉你它是什么。",
-    "keyIngredients": ["面粉", "蜂蜜", "蛋"],
-    "chef": null
+    "keyIngredients": [
+      "面粉",
+      "蜂蜜",
+      "蛋"
+    ],
+    "chef": null,
+    "image": null
   },
   {
     "id": "dariole",
@@ -51,8 +75,14 @@
     "origin": "法国，14世纪",
     "description": "填入奶酪、蛋和香料的小型酥皮挞，记录于 14 世纪食谱《Le Menagier de Paris》。那个年代甜品不常用奶酪，Dariole 是奶制品进入精英甜点世界的早期尝试之一。",
     "remySensory": "奶酪的气味从酥皮里渗出来——温柔的、略带酸味的那种。我觉得这道甜品很诚实：它不试图用香料把自己变成别的东西，它就是奶酪和面团，这已经足够了。",
-    "keyIngredients": ["酥皮", "奶酪", "蛋", "肉桂"],
-    "chef": null
+    "keyIngredients": [
+      "酥皮",
+      "奶酪",
+      "蛋",
+      "肉桂"
+    ],
+    "chef": null,
+    "image": "/dishes/dariole.jpg"
   },
   {
     "id": "farcement",
@@ -62,8 +92,15 @@
     "origin": "萨瓦地区，15世纪",
     "description": "以猪肉、葡萄干、松子和肉桂填入酥皮烘烤的萨瓦传统派。甜和咸混在一起不是疏忽，是当时的正常做法——咸甜分离是后来才发明的规则，不是天生的秩序。",
     "remySensory": "肉馅里的葡萄干……我承认第一次闻到它我愣了一下。甜的和咸的气味叠在一起，像两个人在同时说话。但奇怪的是，它们不吵架。也许甜和咸分开是很晚以后的规则，而不是食物本来的意思。",
-    "keyIngredients": ["猪肉", "葡萄干", "松子", "肉桂", "酥皮"],
-    "chef": null
+    "keyIngredients": [
+      "猪肉",
+      "葡萄干",
+      "松子",
+      "肉桂",
+      "酥皮"
+    ],
+    "chef": null,
+    "image": null
   },
   {
     "id": "consomme",
@@ -73,8 +110,14 @@
     "origin": "法国，18世纪末",
     "description": "Carême 在中世纪 Potage 的基础上反复过滤澄清，做出透明高汤。Escoffier 后来将其纳入系统化的高汤体系。透明度不只是视觉要求——高汤越清，意味着去除杂质的工序越多。",
     "remySensory": "透明的液体却有如此深的气味——这对我来说永远是一个谜。牛骨和蔬菜熬了多少小时我不知道，但我能闻出那种耐心。清汤的气味不展示自己，它只是在那里，等你靠近。",
-    "keyIngredients": ["牛骨高汤", "蛋白", "蔬菜", "香草束"],
-    "chef": "Antonin Carême"
+    "keyIngredients": [
+      "牛骨高汤",
+      "蛋白",
+      "蔬菜",
+      "香草束"
+    ],
+    "chef": "Antonin Carême",
+    "image": "/dishes/consomme.jpg"
   },
   {
     "id": "vol-au-vent",
@@ -84,8 +127,13 @@
     "origin": "法国，1800年代初",
     "description": "Carême 发明的圆柱形千层酥皮空壳，填入各式酱汁馅料食用。据说 Carême 观察到出炉时酥皮如何在热气中「飘飞」而得名。成为此后两个世纪法餐前菜的经典形式。",
     "remySensory": "烤箱里的黄油和面粉……这个气味应该是普通的，但 Carême 的版本不普通。有一种轻盈感，像空气在层层酥皮之间被烘烤成了形状。Vol-au-vent 的气味和它的名字一样，真的就是飘着的。",
-    "keyIngredients": ["千层酥皮", "黄油", "面粉"],
-    "chef": "Antonin Carême"
+    "keyIngredients": [
+      "千层酥皮",
+      "黄油",
+      "面粉"
+    ],
+    "chef": "Antonin Carême",
+    "image": "/dishes/vol-au-vent.jpg"
   },
   {
     "id": "charlotte-russe",
@@ -95,8 +143,14 @@
     "origin": "法国，1815年",
     "description": "Carême 为沙皇俄国宫廷创作的冷甜品，以手指饼干围边、填入巴伐利亚奶油冻。食物首先是雕塑，其次才是食物——这是 Carême 时代的逻辑。影响了后世整个 Charlotte 系列甜品。",
     "remySensory": "巴伐利亚奶油的气味是香草和奶的混合，在冷藏之后会变得更内敛——像是气味也被礼仪管束住了。我觉得 Carême 做的甜品是一种视觉宣言，所以气味是次要的。但我是老鼠，我不在乎视觉宣言，我只在乎那个气味。",
-    "keyIngredients": ["手指饼干", "巴伐利亚奶油", "香草", "吉利丁"],
-    "chef": "Antonin Carême"
+    "keyIngredients": [
+      "手指饼干",
+      "巴伐利亚奶油",
+      "香草",
+      "吉利丁"
+    ],
+    "chef": "Antonin Carême",
+    "image": "/dishes/charlotte-russe.jpg"
   },
   {
     "id": "bechamel-careme",
@@ -106,8 +160,14 @@
     "origin": "法国，18世纪",
     "description": "以黄油、面粉与牛奶制成的基础白色酱汁，Carême 将其纳入「母酱」体系。Escoffier 后来将 Béchamel 列为五大母酱之一。Nouvelle Cuisine 厨师后来把它当成 Escoffier 时代繁复主义的代表来批判。",
     "remySensory": "黄油和面粉在锅里加热的气味——roux 的气味——是法餐厨房里最基础的信号。所有重要的事情都从这里开始。我第一次在 Gusteau 餐厅闻到这个气味的时候，知道这是进入这个厨房的门。黄油，面粉，牛奶——没什么好炫耀的，但没有这个也不行。",
-    "keyIngredients": ["黄油", "面粉", "牛奶", "肉豆蔻"],
-    "chef": "Antonin Carême"
+    "keyIngredients": [
+      "黄油",
+      "面粉",
+      "牛奶",
+      "肉豆蔻"
+    ],
+    "chef": "Antonin Carême",
+    "image": "/dishes/bechamel-careme.jpg"
   },
   {
     "id": "gelee-royale",
@@ -117,8 +177,14 @@
     "origin": "法国，18世纪末",
     "description": "以小牛蹄、鸡肉高汤熬制澄清的透明肉冻，用来包裹或展示冷盘肉类。Carême 把肉冻当建筑材料用——不只是吃的，是定型用的，是菜肴外壳的一部分。",
     "remySensory": "肉冻凝固的气味是高汤气味的压缩版——浓缩的、安静的。我喜欢从液态到固态的这个过程：气味并没有消失，只是变得更深沉了。Carême 用肉冻做装饰，我觉得他大概没想到这个气味会这么好。",
-    "keyIngredients": ["小牛蹄", "鸡肉高汤", "香草束", "吉利丁"],
-    "chef": "Antonin Carême"
+    "keyIngredients": [
+      "小牛蹄",
+      "鸡肉高汤",
+      "香草束",
+      "吉利丁"
+    ],
+    "chef": "Antonin Carême",
+    "image": "/dishes/gelee-royale.jpg"
   },
   {
     "id": "sauce-bechamel-escoffier",
@@ -128,8 +194,15 @@
     "origin": "法国，1903年《Le Guide Culinaire》",
     "description": "Escoffier 在《烹饪指南》中将 Béchamel 标准化为五大母酱之一，确立了精确的比例与工序。这一标准化使白酱成为全球大饭店厨房的通用语言，也让 Nouvelle Cuisine 后来将其视为繁复主义的代表而反叛。",
     "remySensory": "同样的黄油、面粉、牛奶——但 Escoffier 的版本和 Carême 的版本气味不完全一样。标准化让它更精确，但也更可预测。我不是在批评，可预测有它的价值。只是有时候我想，如果牛奶换了产区，这个气味会不会更有意思？",
-    "keyIngredients": ["黄油", "面粉", "牛奶", "洋葱", "肉豆蔻"],
-    "chef": "Auguste Escoffier"
+    "keyIngredients": [
+      "黄油",
+      "面粉",
+      "牛奶",
+      "洋葱",
+      "肉豆蔻"
+    ],
+    "chef": "Auguste Escoffier",
+    "image": "/dishes/sauce-bechamel-escoffier.jpg"
   },
   {
     "id": "peche-melba",
@@ -139,8 +212,13 @@
     "origin": "伦敦萨沃伊酒店，1893年",
     "description": "Escoffier 为歌剧女高音 Nellie Melba 创作的甜品，以香草冰淇淋、鲜桃和覆盆子酱组成。大饭店时代「命名菜肴」传统的代表——用餐桌礼赞名流，是 Escoffier 时代法餐的社交功能体现。",
     "remySensory": "鲜桃的气味和香草冰淇淋的气味在盘子上方形成了两个独立的气味圈，然后在边界处混合。覆盆子在里面唱着更高的音，像是歌剧的高音部分。不知道 Nellie Melba 本人当时是不是真的在意那个气味——但那是我注意到的第一件事。",
-    "keyIngredients": ["桃子", "香草冰淇淋", "覆盆子酱"],
-    "chef": "Auguste Escoffier"
+    "keyIngredients": [
+      "桃子",
+      "香草冰淇淋",
+      "覆盆子酱"
+    ],
+    "chef": "Auguste Escoffier",
+    "image": "/dishes/peche-melba.jpg"
   },
   {
     "id": "tournedos-rossini",
@@ -150,8 +228,15 @@
     "origin": "巴黎，19世纪",
     "description": "以煎牛里脊配鹅肝、松露片和 Madeira 酒汁，据说以作曲家罗西尼命名。Escoffier 时代的奢华菜：顶级食材逐层叠加，没有一样是便宜的。",
     "remySensory": "牛肉、鹅肝、松露——三个气味都极具个性，叠在一起是……对抗？不，是对话。松露的气味是最强势的，它总是在说话。鹅肝在底下很安静。牛肉在中间试图维持秩序。我想知道罗西尼本人喜欢哪一层的气味。",
-    "keyIngredients": ["牛里脊", "鹅肝", "松露", "Madeira酒", "黄油"],
-    "chef": "Auguste Escoffier"
+    "keyIngredients": [
+      "牛里脊",
+      "鹅肝",
+      "松露",
+      "Madeira酒",
+      "黄油"
+    ],
+    "chef": "Auguste Escoffier",
+    "image": "/dishes/tournedos-rossini.jpg"
   },
   {
     "id": "bouillabaisse",
@@ -161,8 +246,15 @@
     "origin": "马赛，普罗旺斯地区",
     "description": "马赛渔民以当日剩余鱼获和藏红花熬制的传统鱼汤。Escoffier 将其纳入高级法餐体系，但保留了普罗旺斯地方特色。Nouvelle Cuisine 后来以 Bouillabaisse 为例，主张回归地方食材和直白烹饪。",
     "remySensory": "藏红花……一种昂贵的气味，但在马赛鱼汤里它不是主角，它只是给海鲜的气味染了一个金黄色的底色。海的气味、鱼的气味、橄榄油的气味——这些才是真正的马赛。我不是第一次理解这件事，但每次闻到都还是觉得那个层次很难解释。",
-    "keyIngredients": ["混合海鲜", "藏红花", "橄榄油", "茴香", "西红柿"],
-    "chef": null
+    "keyIngredients": [
+      "混合海鲜",
+      "藏红花",
+      "橄榄油",
+      "茴香",
+      "西红柿"
+    ],
+    "chef": null,
+    "image": "/dishes/bouillabaisse.jpg"
   },
   {
     "id": "crepes-suzette",
@@ -172,8 +264,15 @@
     "origin": "蒙地卡罗，1895年",
     "description": "以橙汁、橙皮利口酒在桌边现场点燃的薄可丽饼，据说因意外火焰而诞生。Escoffier 时代大饭店的招牌表演项目，「桌边料理」成为精英餐饮体验的组成部分。",
     "remySensory": "橙子皮在黄油里焦糖化的气味，然后是利口酒的酒精在火焰里燃烧。火焰的气味和橙子的气味混合在一起是一种很短暂的东西——只存在于那几秒钟。之后只剩下焦糖和橙汁。我喜欢那种转瞬即逝的气味，你必须在场才能闻到。",
-    "keyIngredients": ["薄饼", "橙汁", "橙皮", "君度酒", "黄油"],
-    "chef": "Auguste Escoffier"
+    "keyIngredients": [
+      "薄饼",
+      "橙汁",
+      "橙皮",
+      "君度酒",
+      "黄油"
+    ],
+    "chef": "Auguste Escoffier",
+    "image": "/dishes/crepes-suzette.jpg"
   },
   {
     "id": "ratatouille-nouvelle",
@@ -183,8 +282,16 @@
     "origin": "普罗旺斯，民间传统，1970年代高级餐厅化",
     "description": "以茄子、西葫芦、彩椒、西红柿炖制的普罗旺斯传统农家菜。Nouvelle Cuisine 厨师将其重新发现并纳入高级餐厅菜单，作为「回归食材本味」哲学的典型案例。电影《料理鼠王》中的核心菜肴。",
     "remySensory": "这是我第一次做给 Ego 先生的菜——所以我对这个气味有特殊的偏见。普罗旺斯香草、橄榄油、西红柿熬成的那种深色汁液……这不是一个精致的气味，这是一个诚实的气味。每次我闻到它，我都回到了那个厨房。我那时候害怕，但手没停。",
-    "keyIngredients": ["茄子", "西葫芦", "彩椒", "西红柿", "普罗旺斯香草", "橄榄油"],
-    "chef": "Paul Bocuse"
+    "keyIngredients": [
+      "茄子",
+      "西葫芦",
+      "彩椒",
+      "西红柿",
+      "普罗旺斯香草",
+      "橄榄油"
+    ],
+    "chef": "Paul Bocuse",
+    "image": "/dishes/ratatouille-nouvelle.jpg"
   },
   {
     "id": "salade-nicoise",
@@ -194,8 +301,16 @@
     "origin": "尼斯，普罗旺斯地区",
     "description": "以金枪鱼、煮蛋、橄榄、番茄、四季豆和橄榄油构成的地中海沙拉。Nouvelle Cuisine 以尼斯沙拉为模板证明了「简单即高级」——无需加热烹调，食材本身就是作品。",
     "remySensory": "生蔬菜的气味和油浸金枪鱼的气味是两种非常不同的东西，但橄榄油把它们联系在了一起。我喜欢这道菜，因为你可以一闻就知道它是哪里来的——地中海的太阳和盐。不夸张，就是那样。",
-    "keyIngredients": ["金枪鱼", "煮蛋", "黑橄榄", "番茄", "四季豆", "橄榄油"],
-    "chef": null
+    "keyIngredients": [
+      "金枪鱼",
+      "煮蛋",
+      "黑橄榄",
+      "番茄",
+      "四季豆",
+      "橄榄油"
+    ],
+    "chef": null,
+    "image": "/dishes/salade-nicoise.jpg"
   },
   {
     "id": "mousse-chocolat",
@@ -205,8 +320,14 @@
     "origin": "法国，Nouvelle Cuisine 时期",
     "description": "以打发蛋白或鲜奶油为基底的轻盈巧克力甜品。Nouvelle Cuisine 用它替代了 Escoffier 时代厚重的巧克力蛋糕——轻盈感、质地的精确控制是新时代甜品哲学的体现。",
     "remySensory": "好的巧克力慕斯的气味是……空气里的可可。不是浓厚的那种，是被打发蛋白稀释后的、轻盈的可可。这让我想到，气味也是可以有「质地」的——稠密的或轻盈的。这个慕斯的气味是轻盈的，像是巧克力在呼吸。",
-    "keyIngredients": ["黑巧克力", "蛋白", "鲜奶油", "糖"],
-    "chef": null
+    "keyIngredients": [
+      "黑巧克力",
+      "蛋白",
+      "鲜奶油",
+      "糖"
+    ],
+    "chef": null,
+    "image": "/dishes/mousse-chocolat.jpg"
   },
   {
     "id": "terrine-de-legumes",
@@ -216,8 +337,15 @@
     "origin": "法国，1970年代",
     "description": "以各色蔬菜和明胶冻制的冷前菜，切开后呈现彩色几何截面。Nouvelle Cuisine 用它挑战了「肉类才是主角」的经典法餐逻辑，同时满足了新时代对健康饮食的诉求。",
     "remySensory": "切开蔬菜冻派的时候，被明胶封存的气味一下子释放出来——胡萝卜、菠菜、豌豆的气味依次出现，像一个气味的时间表。我觉得这道菜的视觉截面很漂亮，但气味截面更漂亮——每种蔬菜都在自己的气味层里好好待着。",
-    "keyIngredients": ["胡萝卜", "菠菜", "豌豆", "红椒", "吉利丁"],
-    "chef": null
+    "keyIngredients": [
+      "胡萝卜",
+      "菠菜",
+      "豌豆",
+      "红椒",
+      "吉利丁"
+    ],
+    "chef": null,
+    "image": "/dishes/terrine-de-legumes.jpg"
   },
   {
     "id": "gratin-dauphinois",
@@ -227,8 +355,14 @@
     "origin": "多菲内地区，Nouvelle化",
     "description": "以薄切土豆、奶油与大蒜慢烤的地方传统菜肴。Nouvelle Cuisine 将这道农家菜引入高级餐厅，作为「地方性食材高级化」的典型案例。",
     "remySensory": "大蒜和奶油在烤箱里的气味……这是一种让人放松的气味，不是那种要你认真对待它的气味。土豆吸收奶油之后的气味更圆润、更深，像是食材在烤箱里谈好了一笔交易。我闻到这个气味就知道今晚不会出差错。",
-    "keyIngredients": ["土豆", "鲜奶油", "大蒜", "格鲁耶尔奶酪"],
-    "chef": null
+    "keyIngredients": [
+      "土豆",
+      "鲜奶油",
+      "大蒜",
+      "格鲁耶尔奶酪"
+    ],
+    "chef": null,
+    "image": "/dishes/gratin-dauphinois.jpg"
   },
   {
     "id": "tarte-tatin",
@@ -238,8 +372,14 @@
     "origin": "索洛涅，Nouvelle 时期重新发扬",
     "description": "据说由 Tatin 姐妹意外发明的倒扣苹果挞。苹果先在黄油糖汁中焦糖化，再覆以酥皮倒扣烘烤。Nouvelle Cuisine 将其作为地方偶然性创造的代表，反对「刻意精心设计」的 Escoffier 美学。",
     "remySensory": "焦糖苹果的气味……先是焦糖的深色甜，然后苹果的果酸从底下升上来，平衡了一切。这两个气味的配合是一种意外，就像 Tatin 姐妹的故事一样。如果她们是故意的，我觉得效果也不会比这更好。",
-    "keyIngredients": ["苹果", "黄油", "焦糖", "酥皮"],
-    "chef": null
+    "keyIngredients": [
+      "苹果",
+      "黄油",
+      "焦糖",
+      "酥皮"
+    ],
+    "chef": null,
+    "image": "/dishes/tarte-tatin.jpg"
   },
   {
     "id": "ratatouille-contemporary",
@@ -249,8 +389,15 @@
     "origin": "全球当代法餐厨房，2000年代至今",
     "description": "当代顶级厨师对 Ratatouille 的重新诠释——薄切蔬菜以精确排列代替炖煮，呈现更精致的视觉层次。《料理鼠王》电影（2007）将这道菜推向全球认知，引发对「朴素食物高级化」的讨论。",
     "remySensory": "和 Nouvelle 版的 Ratatouille 气味一样，又不完全一样。当代版本的蔬菜没有长时间炖煮，所以气味更明亮、更独立——每种蔬菜都还保留着自己的声音。我不知道哪个版本更好，但我知道哪个版本我做给 Ego 先生的时候更有效。",
-    "keyIngredients": ["西葫芦", "茄子", "彩椒", "西红柿", "普罗旺斯香草"],
-    "chef": "Thomas Keller"
+    "keyIngredients": [
+      "西葫芦",
+      "茄子",
+      "彩椒",
+      "西红柿",
+      "普罗旺斯香草"
+    ],
+    "chef": "Thomas Keller",
+    "image": "/dishes/ratatouille-contemporary.jpg"
   },
   {
     "id": "pain-perdu",
@@ -260,8 +407,15 @@
     "origin": "法国民间，当代精致化",
     "description": "以隔夜面包浸入蛋液和牛奶后煎制的经典法国家常菜。当代版本在高级餐厅以布里欧修（Brioche）代替普通面包，配以香草奶油、时令水果精致呈现，是「家常食物高级化」潮流的代表。",
     "remySensory": "蛋液和黄油在热锅里的气味是最家常的气味之一——我在每一个法国厨房都闻过。布里欧修版本多了一层黄油和鸡蛋的丰富底色，让这个气味升了一个档次。同样的东西，用了更好的面包，差别就在那里。",
-    "keyIngredients": ["布里欧修", "蛋", "牛奶", "黄油", "香草"],
-    "chef": null
+    "keyIngredients": [
+      "布里欧修",
+      "蛋",
+      "牛奶",
+      "黄油",
+      "香草"
+    ],
+    "chef": null,
+    "image": "/dishes/pain-perdu.jpg"
   },
   {
     "id": "foie-gras-contemporary",
@@ -271,8 +425,14 @@
     "origin": "法国高级餐厅，2000年代",
     "description": "当代厨师对鹅肝的重新诠释——以低温慢煮（Sous-vide）或其他现代技法处理，搭配酸甜果酱平衡浓郁。顶级餐厅的鹅肝仍是法餐传统与当代技法对话的象征。",
     "remySensory": "鹅肝的气味是一种奢靡的气味——丰腴的、脂肪的、略带金属感的。当代版本用酸果酱来配它，那个酸的气味像是在提醒你：这个东西很浓，你需要喘口气。我总觉得鹅肝的气味有什么沉的东西，不管厨师怎么处理都去不掉。",
-    "keyIngredients": ["鹅肝", "无花果酱", "布里欧修", "海盐"],
-    "chef": null
+    "keyIngredients": [
+      "鹅肝",
+      "无花果酱",
+      "布里欧修",
+      "海盐"
+    ],
+    "chef": null,
+    "image": "/dishes/foie-gras-contemporary.jpg"
   },
   {
     "id": "soupe-de-truffe",
@@ -282,8 +442,14 @@
     "origin": "里昂保罗·博古斯餐厅，1975年（当代传承）",
     "description": "Paul Bocuse 为法国总统吉斯卡尔·德斯坦创作的松露汤，以酥皮封顶的小瓮呈现，揭开时松露香气弥漫。作为当代法餐符号继续流传，体现了经典与当代的交叠关系。",
     "remySensory": "打开那个酥皮封顶的时候，所有的松露气味一起涌出来——这是一种戏剧性，是刻意设计的气味时刻。松露的气味很难描述，它不像别的食物，它更接近土地和雨后的森林，但同时也有某种动物性的东西。我每次闻到它都会停下来。",
-    "keyIngredients": ["黑松露", "鸡肉高汤", "鹅肝", "酥皮"],
-    "chef": "Paul Bocuse"
+    "keyIngredients": [
+      "黑松露",
+      "鸡肉高汤",
+      "鹅肝",
+      "酥皮"
+    ],
+    "chef": "Paul Bocuse",
+    "image": "/dishes/soupe-de-truffe.jpg"
   },
   {
     "id": "oeuf-parfait",
@@ -293,8 +459,13 @@
     "origin": "当代分子料理厨房",
     "description": "以 63°C-65°C 低温慢煮 1 小时的鸡蛋，蛋白凝固但蛋黄保持流动的精确质地。分子料理的代表技法之一——用科学精确度定义「完美」。",
     "remySensory": "温泉蛋的气味是蛋的气味，就是这样。但那个质地……当蛋黄流出来的时候，气味也会略微改变——变得更流动，更开放。这道菜有趣的地方不在气味，在于精确度。一度之间的差别，这不是厨艺，这是科学，但结果是好吃的。",
-    "keyIngredients": ["鸡蛋", "盐", "橄榄油"],
-    "chef": null
+    "keyIngredients": [
+      "鸡蛋",
+      "盐",
+      "橄榄油"
+    ],
+    "chef": null,
+    "image": "/dishes/oeuf-parfait.jpg"
   },
   {
     "id": "madeleine",
@@ -304,7 +475,14 @@
     "origin": "洛林，18世纪，当代持续流行",
     "description": "贝壳形黄油小蛋糕，因普鲁斯特《追忆似水年华》而成为法国文学意象。当代法餐厨房以它作为「乡土传统的精致化」代表，从朴素家常糕点到米其林餐厅餐后小食，它的轨迹横跨了整个法餐演化史。",
     "remySensory": "玛德琳出炉的气味——黄油、柠檬皮和面粉——是我觉得最接近「法国气味定义」的东西。普鲁斯特用记忆描述它，我用气味描述它。说到底是同一件事：有些气味会在你脑子里打开什么，然后你就回到了一个具体的地方，一个具体的时刻。",
-    "keyIngredients": ["黄油", "面粉", "糖", "蛋", "柠檬皮"],
-    "chef": null
+    "keyIngredients": [
+      "黄油",
+      "面粉",
+      "糖",
+      "蛋",
+      "柠檬皮"
+    ],
+    "chef": null,
+    "image": "/dishes/madeleine.jpg"
   }
 ]

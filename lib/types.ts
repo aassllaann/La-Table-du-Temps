@@ -19,6 +19,7 @@ export interface Dish {
   remySensory: string;
   keyIngredients: string[];
   chef: string | null;
+  image?: string | null;
 }
 
 export type EdgeType = 'evolved_from' | 'era_sibling';

@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { getEraColor } from '@/lib/utils';
 import type { Dish } from '@/lib/types';
@@ -20,6 +22,8 @@ interface Props {
 export default function DishInfo({ dish }: Props) {
   const eraColor = getEraColor(dish.era);
   const eraLabel = ERA_LABELS[dish.era] ?? dish.era;
+  const [imgError, setImgError] = useState(false);
+  const showImage = dish.image && !imgError;
 
   return (
     <motion.div
@@ -29,6 +33,54 @@ export default function DishInfo({ dish }: Props) {
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className="flex flex-col gap-4"
     >
+      {/* Dish image */}
+      {showImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          style={{
+            position: 'relative',
+            width: 'calc(100% + 3rem)',
+            marginLeft: '-1.5rem',
+            marginTop: '-1.25rem',
+            height: '192px',
+            overflow: 'hidden',
+            flexShrink: 0,
+          }}
+        >
+          <Image
+            src={dish.image!}
+            alt={dish.name_fr}
+            fill
+            sizes="384px"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            onError={() => setImgError(true)}
+          />
+          {/* Bottom fade into panel background */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: `linear-gradient(to bottom, transparent 40%, rgba(247,243,234,0.95) 100%)`,
+              pointerEvents: 'none',
+            }}
+          />
+          {/* Era color tint top strip */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '3px',
+              background: eraColor,
+              opacity: 0.7,
+            }}
+          />
+        </motion.div>
+      )}
+
       {/* Era badge */}
       <div className="flex items-center gap-2">
         <div

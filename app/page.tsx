@@ -38,8 +38,8 @@ export default function HomePage() {
           alignItems: 'center',
           gap: 10,
           paddingLeft: 'clamp(44px, 6vw, 100px)',
-          paddingTop: 22,
-          paddingBottom: 6,
+          paddingTop: 'clamp(20px, 2.6vh, 30px)',
+          paddingBottom: 'clamp(10px, 1.6vh, 18px)',
           flexShrink: 0,
         }}
       >
@@ -228,7 +228,7 @@ export default function HomePage() {
               fontSize: 'clamp(11px, 0.95vw, 14px)',
               letterSpacing: '0.30em',
               color: 'rgba(155,122,46,0.68)',
-              marginBottom: 'clamp(18px, 2.2vh, 28px)',
+              marginBottom: 'clamp(6px, 0.8vh, 10px)',
             }}
           >
             时间的餐桌
@@ -238,10 +238,10 @@ export default function HomePage() {
           <motion.div
             variants={rightItem}
             style={{
-              width: 28,
+              width: 36,
               height: 1,
               background: 'rgba(28,20,16,0.14)',
-              marginBottom: 'clamp(18px, 2.2vh, 28px)',
+              marginBottom: 'clamp(24px, 3vh, 38px)',
             }}
           />
 
@@ -254,7 +254,7 @@ export default function HomePage() {
               lineHeight: 1.75,
               color: 'rgba(28,20,16,0.54)',
               fontStyle: 'italic',
-              marginBottom: 'clamp(20px, 2.4vh, 32px)',
+              marginBottom: 'clamp(36px, 4.8vh, 60px)',
             }}
           >
             <span
@@ -279,7 +279,7 @@ export default function HomePage() {
               color: 'rgba(28,20,16,0.20)',
               textTransform: 'uppercase',
               fontFamily: 'Georgia, serif',
-              marginBottom: 'clamp(24px, 3vh, 42px)',
+              marginBottom: 'clamp(16px, 2vh, 26px)',
             }}
           >
             五个时代 · 二十八道菜肴 · 两种演化关系
